@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia - CDC Iturribero</title>
+  
+  <style>
+    /* =========================================================
+       1. ESTILOS GENERALES Y VARIABLES (Heredados del Index)
+       ========================================================= */
+    :root {
+      --primary-color: #FF8C00;
+      --secondary-color: #f8f9fa;
+      --text-color: #333333;
+      --bg-color: #ffffff;
+      --footer-bg: #212529;
+      --font-base: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-base);
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       2. CABECERA Y NAVEGACIÓN
+       ========================================================= */
+    .header {
+      background-color: var(--bg-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      max-height: 85px; 
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary-color);
+    }
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      gap: 2rem; 
+      align-items: center;
+    }
+
+    .menu-list a {
+      text-decoration: none;
+      color: var(--primary-color); 
+      font-weight: 600;
+      font-size: 1.3rem; 
+      transition: color 0.3s;
+    }
+
+    .menu-list a:hover {
+      color: #CC6A00; 
+    }
+
+    .btn-contacto-menu {
+      background-color: var(--primary-color);
+      color: #ffffff !important; 
+      padding: 0.7rem 1.8rem; 
+      border-radius: 50px; 
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); 
+      transition: all 0.3s ease;
+    }
+
+    .btn-contacto-menu:hover {
+      background-color: #CC6A00;
+      color: #ffffff !important;
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+    }
+
+    .lang-switch a {
+      font-weight: bold;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 1.1rem; 
+    }
+
+    /* =========================================================
+       3. ESTILOS ESPECÍFICOS: PÁGINA DE HISTORIA
+       ========================================================= */
+	.hero-historia {
+		/* Usamos la foto de equipos actuales oscurecida para que destaque el texto */
+		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('foto-antigua.jpg');
+		background-color: #555; 
+		background-size: cover;
+		background-position: center 20%;
+		min-height: 40vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		text-align: center;
+	}
+
+    .hero-historia h1 {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .historia-container {
+      background: var(--bg-color);
+      border-radius: 20px;
+      padding: 4rem;
+      box-shadow: 0 -20px 40px rgba(0,0,0,0.08);
+      margin-top: -4rem; 
+      position: relative;
+      z-index: 10;
+      margin-bottom: 5rem;
+    }
+
+    .historia-grid {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .historia-texto {
+      flex: 1;
+    }
+
+    .historia-texto p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .letra-capital::first-letter {
+      font-size: 3.5rem;
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .historia-imagen {
+      flex: 1;
+    }
+
+    .historia-imagen {
+      flex: 1;
+    }
+
+    /* NUEVA CUADRÍCULA PARA LAS 3 FOTOS */
+    .collage-historia {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+      gap: 1.5rem; /* Espacio entre las fotos */
+    }
+
+    .collage-historia img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Recorta la foto sin deformarla para que cuadre perfecto */
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    /* Efecto para que resalten un poco al pasar el ratón */
+    .collage-historia img:hover {
+      transform: scale(1.03);
+    }
+
+    .foto-principal {
+      grid-column: 1 / -1; /* Obliga a esta foto a ocupar las dos columnas */
+      height: 300px; /* Altura de la foto grande */
+    }
+
+    .foto-secundaria {
+      height: 220px; /* Altura de las dos fotos pequeñas de abajo */
+    }
+
+    .elite-section {
+      background-color: var(--secondary-color);
+      padding: 4rem;
+      border-radius: 20px;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .elite-section h2 {
+      color: var(--text-color);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .elite-section p {
+      font-size: 1.15rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .pro-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .pro-tag {
+      background-color: white;
+      color: var(--text-color);
+      border: 2px solid var(--primary-color);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .pro-tag:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+    }
+
+    /* =========================================================
+       4. PIE DE PÁGINA
+       ========================================================= */
+    .footer {
+      background-color: var(--footer-bg);
+      color: #ffffff;
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 2.5rem;
+    }
+
+    /* Diseño Responsivo (Móviles) */
+    @media (max-width: 768px) {
+      .header-container { padding: 1rem; }
+      .menu-toggle { display: block; }
+      .menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--bg-color);
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .historia-grid { flex-direction: column; }
+      .historia-container { padding: 2rem; margin-top: -2rem; }
+      .elite-section { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="/" class="logo" aria-label="Inicio">
+        <img src="logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Inicio</a></li>
+		  <li><a href="/historia.html" style="color: #CC6A00;">Historia</a></li>
+          <li><a href="/equipos">Equipos</a></li>
+          <li><a href="/escuela">Escuela</a></li>
+          <li><a href="/contacto" class="btn-contacto-menu">Contacto</a></li>
+          <li class="lang-switch"><a href="/eu" aria-label="Aldatu euskarara">EU</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO DE HISTORIA -->
+    <section class="hero-historia">
+      <h1>Nuestra Historia</h1>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container historia-container">
+      
+      <div class="historia-grid">
+        <div class="historia-texto">
+          <p class="letra-capital">El CDC ITURRIBERO, como Club Deportivo Ciclista sin ánimo de lucro, lleva inscrito en el Registro de Asociaciones del Gobierno Vasco desde 1987, pero realmente, todo empezó mucho antes, allá por el año 1981.</p>
+          <p>Fue fundado por un grupo de madres y padres adscritos a la Ikastola Ikasbidea de Durana. Con más de 40 años a nuestras espaldas, el Club se ha mantenido vivo con la aportación incansable de esas familias y con la colaboración del AMPA de la Ikastola desde 2011, sumando el apoyo y patrocinio de diferentes empresas y entidades de la zona.</p>
+          <p>Actualmente, niños y niñas de diferentes centros escolares practican el ciclismo con nosotros, manteniendo intacta la ilusión del primer día. Hoy en día, algunos de aquellos niños que se acercaron al deporte a través del club, son los padres y madres de estas nuevas generaciones.</p>
+        </div>
+        
+		<div class="historia-imagen">
+          <!-- CUADRÍCULA DE COLLAGE -->
+          <div class="collage-historia">
+            <!-- Renombra tus 3 archivos de fotos a estos nombres o cámbialos aquí -->
+            <img src="foto-antigua-1.jpg" alt="Equipo Iturribero original" class="foto-principal">
+            <img src="foto-antigua-2.jpg" alt="Jóvenes ciclistas" class="foto-secundaria">
+            <img src="foto-antigua-3.jpg" alt="Ciclista firmando autógrafos" class="foto-secundaria">
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN ÉLITE -->
+      <div class="elite-section">
+        <h2>De la cantera a la élite</h2>
+        <p>Son muchos los que se han iniciado bajo nuestra tutela. Antiguos miembros de nuestro Club han hecho del ciclismo su medio de vida, llegando a disputar en la élite del Ciclismo Profesional. Un orgullo que sigue inspirando a nuestra escuela.</p>
+        
+        <div class="pro-tags">
+          <span class="pro-tag">Joseba Beloki</span>
+          <span class="pro-tag">Gorka Beloki</span>
+          <span class="pro-tag">Aitor Quintana</span>
+          <span class="pro-tag">Unai Yus</span>
+          <span class="pro-tag">Iker Ballarin</span>
+          <span class="pro-tag">Unai Cuadrado</span>
+          <span class="pro-tag">Oier Lazkano</span>
+          <span class="pro-tag">Imanol Estevez</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+</body>
+</html>
