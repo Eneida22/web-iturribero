@@ -377,6 +377,19 @@
       <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
     </div>
   </footer>
-
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // --- CÓDIGO DEL MENÚ MÓVIL ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if(menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+	
 </body>
 </html>
