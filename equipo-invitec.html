@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitec Iturribero - CDC Iturribero</title>
+  
+  <style>
+    /* =========================================================
+       1. ESTILOS GENERALES Y VARIABLES
+       ========================================================= */
+    :root {
+      --primary-color: #FF8C00;
+      --secondary-color: #f8f9fa;
+      --text-color: #333333;
+      --bg-color: #ffffff;
+      --footer-bg: #212529;
+      --font-base: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-base);
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       2. CABECERA Y NAVEGACIÓN
+       ========================================================= */
+    .header {
+      background-color: var(--bg-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;
+    }
+
+    .logo { display: flex; align-items: center; }
+    .logo-img { max-height: 85px; width: auto; transition: transform 0.3s ease; }
+    .logo-img:hover { transform: scale(1.05); }
+
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.2rem; font-weight: bold; cursor: pointer; color: var(--primary-color);
+    }
+
+    .menu-list { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .menu-list a {
+      text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 1.3rem; transition: color 0.3s;
+    }
+    .menu-list a:hover { color: #CC6A00; }
+
+    .btn-contacto-menu {
+      background-color: var(--primary-color); color: #ffffff !important; 
+      padding: 0.7rem 1.8rem; border-radius: 50px; font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); transition: all 0.3s ease;
+    }
+    .btn-contacto-menu:hover {
+      background-color: #CC6A00; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+    }
+
+    .lang-switch a {
+      font-weight: bold; color: var(--primary-color); border: 2px solid var(--primary-color);
+      padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 1.1rem; 
+    }
+
+    /* =========================================================
+       3. ESTILOS ESPECÍFICOS: PÁGINA DE PLANTILLA (ROSTER)
+       ========================================================= */
+    .hero-roster {
+      /* Puedes usar la misma cabecera de equipos o una específica del equipo Invitec */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('cabecera-equipos.webp');
+      background-color: #555; 
+      background-size: cover;
+      background-position: center 75%;
+      min-height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-roster h1 {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero-roster p {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .roster-section {
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .roster-section h2 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Línea decorativa debajo del título "Cadetes" */
+    .roster-section h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      background-color: var(--primary-color);
+      bottom: -10px;
+      left: 25%;
+      border-radius: 2px;
+    }
+
+    /* LA CUADRÍCULA MÁGICA: Se adapta sola al tamaño de la pantalla */
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2.5rem;
+    }
+
+    /* Tarjeta individual del ciclista */
+    .rider-card {
+      background: var(--bg-color);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .rider-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 140, 0, 0.15);
+      border-color: rgba(255, 140, 0, 0.3);
+    }
+
+    .rider-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: top center;
+      background-color: #f4f4f4; /* Fondo gris claro mientras carga la foto */
+    }
+
+    .rider-info {
+      padding: 1.5rem;
+      background-color: white;
+    }
+
+    .rider-info h3 {
+      font-size: 1.4rem;
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    /* =========================================================
+       4. PIE DE PÁGINA
+       ========================================================= */
+    .footer {
+      background-color: var(--footer-bg);
+      color: #ffffff;
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 2.5rem;
+    }
+
+    /* =========================================================
+       5. DISEÑO RESPONSIVO (MÓVILES)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .header-container { padding: 1rem; }
+      .menu-toggle { display: block; }
+      .menu-list {
+        display: none; flex-direction: column; width: 100%;
+        position: absolute; top: 100%; left: 0;
+        background-color: var(--bg-color); padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .menu-list.active { display: flex; }
+      .hero-roster h1 { font-size: 2.5rem; }
+      .roster-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+      .rider-img { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <!-- Seguimos marcando Equipos en naranja porque estamos dentro de esa sección -->
+          <li><a href="equipos.html" style="color: #CC6A00;">Equipos</a></li>
+          <li><a href="escuela.html">Escuela</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
+          <li class="lang-switch"><a href="eu.html" aria-label="Aldatu euskarara">EU</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO DEL EQUIPO -->
+    <section class="hero-roster">
+      <div>
+        <h1>Invitec Iturribero</h1>
+        <p>Temporada 2026</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CADETES -->
+    <div class="container roster-section">
+      <h2>Cadetes</h2>
+      
+      <div class="roster-grid">
+        
+        <!-- CORREDOR 1 -->
+        <div class="rider-card">
+          <!-- Acuérdate de guardar la foto de Aitor con este nombre exacto o cambiarlo aquí -->
+          <img src="foto-aitor-esteban.jpg" alt="Aitor Esteban" class="rider-img">
+          <div class="rider-info">
+            <h3>Aitor Esteban</h3>
+          </div>
+        </div>
+
+        <!-- CORREDOR 2 (Ejemplo para que veas cómo se ponen más) -->
+        <div class="rider-card">
+          <img src="foto-aitor-michelena.jpg" alt="Aitor Michelena" class="rider-img">
+          <div class="rider-info">
+            <h3>Aitor Michelena</h3>
+          </div>
+        </div>
+        
+        <!-- CORREDOR 3 (Añade tantos bloques como este como necesites) -->
+        <div class="rider-card">
+          <img src="foto-asier-alonso.jpg" alt="Asier Alonso" class="rider-img">
+          <div class="rider-info">
+            <h3>Asier Alonso</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Si tuvieras juveniles, podrías copiar todo el bloque desde <div class="container roster-section"> hasta su cierre y cambiar el h2 por "Juveniles" -->
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT DEL MENÚ MÓVIL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
