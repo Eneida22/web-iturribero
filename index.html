@@ -315,7 +315,11 @@
         padding: 1rem 0;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       }
-      
+
+    /* Esta es la clase que aplicaremos al pulsar el botón */
+    .menu-list.active {
+      display: flex;
+    }
       .info-section {
         flex-direction: column;
         padding: 3rem 0;
@@ -402,13 +406,18 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // --- CÓDIGO DEL MENÚ MÓVIL ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('active');
+        });
+
+        // --- CÓDIGO DEL CARRUSEL (El que ya tenías) ---
         const track = document.getElementById("sponsorsTrack");
         const group = track.querySelector(".sponsors-group");
-
         track.appendChild(group.cloneNode(true));
-
         let groupWidth = group.offsetWidth;
-
         let position = 0;
         let speed = 0.35;
         let paused = false;
