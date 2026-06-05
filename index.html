@@ -220,70 +220,70 @@
       width: 100%;
       text-align: center;
     }
-	
-	/* =========================================================
-	   CARRUSEL DE PATROCINADORES
-	   ========================================================= */
+    
+    /* =========================================================
+       CARRUSEL DE PATROCINADORES
+       ========================================================= */
 
-	.sponsors-section {
-		background-color: var(--bg-color);
-		padding: 4rem 0;
-		border-top: 1px solid rgba(0,0,0,0.05);
-	}
+    .sponsors-section {
+        background-color: var(--bg-color);
+        padding: 4rem 0;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
 
-	.sponsors-slider {
-		overflow: hidden;
-		position: relative;
+    .sponsors-slider {
+        overflow: hidden;
+        position: relative;
 
-		-webkit-mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 10%,
-			black 90%,
-			transparent
-		);
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
 
-		mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 10%,
-			black 90%,
-			transparent
-		);
-	}
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+    }
 
-	.sponsors-track {
-		display: flex;
-		width: max-content;
-	}
+    .sponsors-track {
+        display: flex;
+        width: max-content;
+    }
 
-	.sponsors-group {
-		display: flex;
-		align-items: center;
-		gap: 6rem;
-		padding-right: 5rem;
-		flex-shrink: 0;
-	}
+    .sponsors-group {
+        display: flex;
+        align-items: center;
+        gap: 6rem;
+        padding-right: 5rem;
+        flex-shrink: 0;
+    }
 
-	.sponsor-logo {
-		height: 70px;
-		width: auto;
-		max-width: 220px;
-		object-fit: contain;
+    .sponsor-logo {
+        height: 70px;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
 
-		filter: grayscale(100%) opacity(60%);
+        filter: grayscale(100%) opacity(60%);
 
-		transition:
-			transform 0.3s ease,
-			filter 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
 
-		flex-shrink: 0;
-	}
+        flex-shrink: 0;
+    }
 
-	.sponsor-logo:hover {
-		filter: grayscale(0%) opacity(100%);
-		transform: scale(1.08);
-	}
+    .sponsor-logo:hover {
+        filter: grayscale(0%) opacity(100%);
+        transform: scale(1.08);
+    }
 
     /* Pie de página */
     .footer {
@@ -324,56 +324,6 @@
   </style>
 </head>
 
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const track = document.getElementById("sponsorsTrack");
-    const group = track.querySelector(".sponsors-group");
-
-    track.appendChild(group.cloneNode(true));
-
-    let groupWidth = group.offsetWidth;
-
-    let position = 0;
-    let speed = 0.35;
-    let paused = false;
-
-    window.addEventListener("resize", () => {
-        groupWidth = group.offsetWidth;
-    });
-
-    track.addEventListener("mouseenter", () => {
-        paused = true;
-    });
-
-    track.addEventListener("mouseleave", () => {
-        paused = false;
-    });
-
-    function animate() {
-
-        if (!paused) {
-
-            position -= speed;
-
-            if (Math.abs(position) >= groupWidth) {
-                position = 0;
-            }
-
-            track.style.transform =
-                `translateX(${position}px)`;
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-});
-
-</script>
-
 <body>
   <header class="header">
     <div class="container header-container">
@@ -383,8 +333,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <nav class="nav">
         <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
         <ul class="menu-list" id="menu-list">
-          <li><a href="/" aria-current="page">Inicio</a></li>
-          <li><a href="/historia">Historia</a></li>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <!-- Enlace actualizado a historia.html -->
+          <li><a href="historia.html">Historia</a></li>
           <li><a href="/equipos">Equipos</a></li>
           <li><a href="/escuela">Escuela</a></li>
           <li><a href="/contacto" class="btn-contacto-menu">Contacto</a></li>
@@ -404,7 +355,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card">
         <h2>Sobre Nosotros</h2>
         <p>Con más de 40 años de historia, son muchos los niños y niñas que se han iniciado en la práctica ciclista bajo nuestra tutela en Durana.</p>
-        <a href="/historia" class="btn btn-secondary">Nuestra Historia</a>
+        <!-- Enlace del botón actualizado a historia.html -->
+        <a href="historia.html" class="btn btn-secondary">Nuestra Historia</a>
       </div>
       <div class="card">
         <h2>CDC Iturribero</h2>
@@ -412,33 +364,33 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="/contacto" class="btn btn-secondary">Hazte Socio</a>
       </div>
     </section>
-	 <!-- =========================================================
+     <!-- =========================================================
      CARRUSEL DE PATROCINADORES
      ========================================================= -->
-	<section class="sponsors-section">
-		<div class="sponsors-slider">
+    <section class="sponsors-section">
+        <div class="sponsors-slider">
 
-			<div class="sponsors-track" id="sponsorsTrack">
+            <div class="sponsors-track" id="sponsorsTrack">
 
-				<div class="sponsors-group">
+                <div class="sponsors-group">
 
-					<img src="logo-invitec.png" alt="Invitec" class="sponsor-logo">
-					<img src="logo-palettransport.png" alt="Palet Transport" class="sponsor-logo">
-					<img src="logo-raulquintana.png" alt="Raúl Quintana" class="sponsor-logo">
-					<img src="logo-txapeldun.png" alt="Txapeldun" class="sponsor-logo">
-					<img src="logo-kalas.png" alt="Kalas" class="sponsor-logo">
-					<img src="logo-rpk.png" alt="RPK" class="sponsor-logo">
-					<img src="logo-fincasuleta.png" alt="Fincas Uleta" class="sponsor-logo">
-					<img src="logo-ikasbideaikastolaipi.png" alt="Ikasbidea Ikastola IPI" class="sponsor-logo">
-					<img src="logo-fundacionvital.png" alt="Fundación Vital" class="sponsor-logo">
+                    <img src="logo-invitec.png" alt="Invitec" class="sponsor-logo">
+                    <img src="logo-palettransport.png" alt="Palet Transport" class="sponsor-logo">
+                    <img src="logo-raulquintana.png" alt="Raúl Quintana" class="sponsor-logo">
+                    <img src="logo-txapeldun.png" alt="Txapeldun" class="sponsor-logo">
+                    <img src="logo-kalas.png" alt="Kalas" class="sponsor-logo">
+                    <img src="logo-rpk.png" alt="RPK" class="sponsor-logo">
+                    <img src="logo-fincasuleta.png" alt="Fincas Uleta" class="sponsor-logo">
+                    <img src="logo-ikasbideaikastolaipi.png" alt="Ikasbidea Ikastola IPI" class="sponsor-logo">
+                    <img src="logo-fundacionvital.png" alt="Fundación Vital" class="sponsor-logo">
 
-				</div>
+                </div>
 
-			</div>
+            </div>
 
-		</div>
-	</section>
-	
+        </div>
+    </section>
+    
   </main>
 
   <footer class="footer">
@@ -447,5 +399,45 @@ document.addEventListener("DOMContentLoaded", () => {
       <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("sponsorsTrack");
+        const group = track.querySelector(".sponsors-group");
+
+        track.appendChild(group.cloneNode(true));
+
+        let groupWidth = group.offsetWidth;
+
+        let position = 0;
+        let speed = 0.35;
+        let paused = false;
+
+        window.addEventListener("resize", () => {
+            groupWidth = group.offsetWidth;
+        });
+
+        track.addEventListener("mouseenter", () => {
+            paused = true;
+        });
+
+        track.addEventListener("mouseleave", () => {
+            paused = false;
+        });
+
+        function animate() {
+            if (!paused) {
+                position -= speed;
+                if (Math.abs(position) >= groupWidth) {
+                    position = 0;
+                }
+                track.style.transform = `translateX(${position}px)`;
+            }
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    });
+  </script>
 </body>
 </html>
