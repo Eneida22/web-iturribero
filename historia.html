@@ -128,19 +128,18 @@
     /* =========================================================
        3. ESTILOS ESPECÍFICOS: PÁGINA DE HISTORIA
        ========================================================= */
-	.hero-historia {
-		/* Usamos la foto de equipos actuales oscurecida para que destaque el texto */
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('foto-antigua.jpg');
-		background-color: #555; 
-		background-size: cover;
-		background-position: center 20%;
-		min-height: 40vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: white;
-		text-align: center;
-	}
+    .hero-historia {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('foto-equipos.jpg');
+      background-color: #555; 
+      background-size: cover;
+      background-position: center 20%;
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
 
     .hero-historia h1 {
       font-size: 3.5rem;
@@ -189,38 +188,33 @@
       flex: 1;
     }
 
-    .historia-imagen {
-      flex: 1;
-    }
-
-    /* NUEVA CUADRÍCULA PARA LAS 3 FOTOS */
+    /* CUADRÍCULA PARA LAS 3 FOTOS */
     .collage-historia {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-      gap: 1.5rem; /* Espacio entre las fotos */
+      grid-template-columns: 1fr 1fr; 
+      gap: 1.5rem; 
     }
 
     .collage-historia img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Recorta la foto sin deformarla para que cuadre perfecto */
+      object-fit: cover; 
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
 
-    /* Efecto para que resalten un poco al pasar el ratón */
     .collage-historia img:hover {
       transform: scale(1.03);
     }
 
     .foto-principal {
-      grid-column: 1 / -1; /* Obliga a esta foto a ocupar las dos columnas */
-      height: 300px; /* Altura de la foto grande */
+      grid-column: 1 / -1; 
+      height: 300px; 
     }
 
     .foto-secundaria {
-      height: 220px; /* Altura de las dos fotos pequeñas de abajo */
+      height: 220px; 
     }
 
     .elite-section {
@@ -280,10 +274,14 @@
       margin-top: 2.5rem;
     }
 
-    /* Diseño Responsivo (Móviles) */
+    /* =========================================================
+       5. DISEÑO RESPONSIVO (MÓVILES)
+       ========================================================= */
     @media (max-width: 768px) {
       .header-container { padding: 1rem; }
+      
       .menu-toggle { display: block; }
+      
       .menu-list {
         display: none;
         flex-direction: column;
@@ -296,7 +294,7 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       }
       
-      /* ESTA ES LA REGLA CLAVE QUE FALTABA AQUÍ */
+      /* CLAVE PARA QUE EL MENÚ SE DESPLIEGUE */
       .menu-list.active {
         display: flex;
       }
@@ -312,14 +310,15 @@
   <!-- CABECERA -->
   <header class="header">
     <div class="container header-container">
-      <a href="/" class="logo" aria-label="Inicio">
+      <a href="index.html" class="logo" aria-label="Inicio">
         <img src="logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
       </a>
       <nav class="nav">
         <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
         <ul class="menu-list" id="menu-list">
+          <!-- Enlaces corregidos -->
           <li><a href="index.html">Inicio</a></li>
-		  <li><a href="/historia.html" style="color: #CC6A00;">Historia</a></li>
+          <li><a href="historia.html" style="color: #CC6A00;">Historia</a></li>
           <li><a href="/equipos">Equipos</a></li>
           <li><a href="/escuela">Escuela</a></li>
           <li><a href="/contacto" class="btn-contacto-menu">Contacto</a></li>
@@ -345,10 +344,9 @@
           <p>Actualmente, niños y niñas de diferentes centros escolares practican el ciclismo con nosotros, manteniendo intacta la ilusión del primer día. Hoy en día, algunos de aquellos niños que se acercaron al deporte a través del club, son los padres y madres de estas nuevas generaciones.</p>
         </div>
         
-		<div class="historia-imagen">
-          <!-- CUADRÍCULA DE COLLAGE -->
+        <div class="historia-imagen">
+          <!-- COLLAGE DE FOTOS -->
           <div class="collage-historia">
-            <!-- Renombra tus 3 archivos de fotos a estos nombres o cámbialos aquí -->
             <img src="foto-antigua-1.jpg" alt="Equipo Iturribero original" class="foto-principal">
             <img src="foto-antigua-2.jpg" alt="Jóvenes ciclistas" class="foto-secundaria">
             <img src="foto-antigua-3.jpg" alt="Ciclista firmando autógrafos" class="foto-secundaria">
@@ -358,7 +356,7 @@
 
       <!-- SECCIÓN ÉLITE -->
       <div class="elite-section">
-        <h2>De la cantera a la élite</h2>
+        <h2>De la Cantera a la Élite</h2>
         <p>Son muchos los que se han iniciado bajo nuestra tutela. Antiguos miembros de nuestro Club han hecho del ciclismo su medio de vida, llegando a disputar en la élite del Ciclismo Profesional. Un orgullo que sigue inspirando a nuestra escuela.</p>
         
         <div class="pro-tags">
@@ -383,19 +381,20 @@
       <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
     </div>
   </footer>
-<script>
+
+  <!-- JAVASCRIPT DEL MENÚ MÓVIL -->
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // --- CÓDIGO DEL MENÚ MÓVIL ---
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.getElementById('menu-list');
         
-        if(menuToggle && menuList) {
+        if (menuToggle && menuList) {
             menuToggle.addEventListener('click', () => {
                 menuList.classList.toggle('active');
             });
         }
     });
   </script>
-	
+
 </body>
 </html>
