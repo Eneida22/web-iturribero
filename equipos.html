@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipos - CDC Iturribero</title>
+  
+  <style>
+    /* =========================================================
+       1. ESTILOS GENERALES Y VARIABLES (Heredados)
+       ========================================================= */
+    :root {
+      --primary-color: #FF8C00;
+      --secondary-color: #f8f9fa;
+      --text-color: #333333;
+      --bg-color: #ffffff;
+      --footer-bg: #212529;
+      --font-base: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-base);
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       2. CABECERA Y NAVEGACIÓN
+       ========================================================= */
+    .header {
+      background-color: var(--bg-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo { display: flex; align-items: center; }
+    .logo-img { max-height: 85px; width: auto; transition: transform 0.3s ease; }
+    .logo-img:hover { transform: scale(1.05); }
+
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.2rem; font-weight: bold; cursor: pointer;
+      color: var(--primary-color);
+    }
+
+    .menu-list { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .menu-list a {
+      text-decoration: none; color: var(--primary-color); 
+      font-weight: 600; font-size: 1.3rem; transition: color 0.3s;
+    }
+    .menu-list a:hover { color: #CC6A00; }
+
+    .btn-contacto-menu {
+      background-color: var(--primary-color); color: #ffffff !important; 
+      padding: 0.7rem 1.8rem; border-radius: 50px; font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); transition: all 0.3s ease;
+    }
+    .btn-contacto-menu:hover {
+      background-color: #CC6A00; transform: translateY(-2px); 
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+    }
+
+    .lang-switch a {
+      font-weight: bold; color: var(--primary-color); border: 2px solid var(--primary-color);
+      padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 1.1rem; 
+    }
+
+    /* =========================================================
+       BOTONES MODERNOS (Estilo Agencia)
+       ========================================================= */
+    .btn {
+      display: inline-block; padding: 1rem 2rem; text-decoration: none;
+      border-radius: 50px; font-weight: bold; text-transform: uppercase;
+      letter-spacing: 1px; font-size: 0.95rem; transition: all 0.3s ease;
+      border: none; cursor: pointer;
+    }
+
+    .btn-secondary {
+      background-color: var(--primary-color); color: #ffffff;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4); 
+    }
+    .btn-secondary:hover {
+      background-color: #CC6A00; transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6); color: #ffffff;
+    }
+
+    /* =========================================================
+       3. ESTILOS ESPECÍFICOS: PÁGINA DE EQUIPOS
+       ========================================================= */
+	.hero-equipos {
+		  /* Ponemos tu foto y le mantenemos el filtro oscuro para que se lea el título */
+		  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('cabecera-equipos.jpg');
+		  background-color: #555; 
+		  background-size: cover;
+		  /* LA CLAVE: Centramos la foto un poco más abajo para no cortarles la cabeza */
+		  background-position: center 75%;
+		  min-height: 40vh;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  color: white;
+		  text-align: center;
+		}
+
+    .hero-equipos h1 {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .equipos-container {
+      padding: 6rem 0;
+    }
+
+    /* Estructura general de las filas de equipos */
+    .equipo-row {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      margin-bottom: 6rem;
+    }
+
+    /* CLAVE: Invierte el orden visual para hacer el diseño Zig-Zag en la segunda fila */
+    .equipo-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .equipo-img {
+      flex: 1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .equipo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .equipo-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .equipo-text {
+      flex: 1;
+    }
+
+    .equipo-text h2 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .equipo-text p {
+      font-size: 1.15rem;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    /* =========================================================
+       4. PIE DE PÁGINA
+       ========================================================= */
+    .footer {
+      background-color: var(--footer-bg);
+      color: #ffffff;
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 2.5rem;
+    }
+
+    /* =========================================================
+       5. DISEÑO RESPONSIVO (MÓVILES)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .header-container { padding: 1rem; }
+      .menu-toggle { display: block; }
+      .menu-list {
+        display: none; flex-direction: column; width: 100%;
+        position: absolute; top: 100%; left: 0;
+        background-color: var(--bg-color); padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .menu-list.active { display: flex; }
+
+      .equipos-container { padding: 3rem 0; }
+      
+      /* En móviles, anulamos el zig-zag para que siempre salga la foto arriba y el texto abajo */
+      .equipo-row, .equipo-row.reverse {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="equipos.html" style="color: #CC6A00;">Equipos</a></li>
+          <li><a href="/escuela">Escuela</a></li>
+          <li><a href="/contacto" class="btn-contacto-menu">Contacto</a></li>
+          <li class="lang-switch"><a href="/eu" aria-label="Aldatu euskarara">EU</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO DE EQUIPOS -->
+    <section class="hero-equipos">
+      <h1>Equipos</h1>
+    </section>
+
+    <!-- SECCIÓN PRINCIPAL DE EQUIPOS -->
+    <div class="container equipos-container">
+      
+      <!-- EQUIPO 1: Imagen izquierda, texto derecha -->
+      <div class="equipo-row">
+        <div class="equipo-img">
+          <!-- Asegúrate de tener esta foto guardada -->
+          <img src="foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles">
+        </div>
+        <div class="equipo-text">
+          <h2>Invitec Iturribero</h2>
+          <p>Cadetes Juveniles...</p>
+          <a href="#" class="btn btn-secondary">Seguir leyendo...</a>
+        </div>
+      </div>
+
+      <!-- EQUIPO 2: Texto izquierda, imagen derecha (Zig-Zag) -->
+      <div class="equipo-row reverse">
+        <div class="equipo-img">
+          <!-- Asegúrate de tener esta foto del camión guardada -->
+          <img src="foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross">
+        </div>
+        <div class="equipo-text">
+          <h2>CX Iturribero</h2>
+          <p>Si lo pruebas, no lo olvidarás. Quizá sea por la sensación de rapidez, fluidez de carrera y esa adrenalina que te invade cuando dan la salida. 3,2,1... ¡FUEGO! El ciclocross es...</p>
+          <a href="#" class="btn btn-secondary">Seguir leyendo...</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT DEL MENÚ MÓVIL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
