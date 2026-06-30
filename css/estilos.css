@@ -574,7 +574,7 @@ body {
    ESTILOS ESPECÍFICOS: PÁGINA DE ESCUELA
    ========================================================= */
 .hero-escuela {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/escuela/cabecera-escuela.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/equipos/cabecera-equipos.jpg');
   background-color: #555; 
   background-size: cover;
   background-position: center;
