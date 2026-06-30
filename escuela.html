@@ -37,22 +37,22 @@
       
       <section class="intro-escuela">
         <h2>Aprender disfrutando</h2>
-        <p>Desde el Club Deportivo Ciclista ITURRIBERO se entiende este deporte como un complemento a la formación como personas de todos los y las integrantes...</p>
+        <p>Desde el Club Deportivo Ciclista ITURRIBERO se entiende este deporte como un complemento a la formación como personas de todos los y las integrantes, a la vez que una posibilidad de aprendizaje y mejora de destrezas en el ámbito deportivo y personal.</p>
       </section>
 
-    <div class="escuela-galeria">
-        <img src="img/equipos/escuela/escuela-base.jpg" alt="Escuela Iturribero 0">
-        <img src="img/equipos/escuela/escuela-base1.jpg" alt="Escuela Iturribero 1">
-        <img src="img/equipos/escuela/escuela-base2.jpg" alt="Escuela Iturribero 2">
-        <img src="img/equipos/escuela/escuela-base3.jpg" alt="Escuela Iturribero 3">
-        <img src="img/equipos/escuela/escuela-base4.jpg" alt="Escuela Iturribero 4">
-        <img src="img/equipos/escuela/escuela-base5.jpg" alt="Escuela Iturribero 5">
-    </div>
-      
-        <div class="equipo-text">
-          <h3>Niveles de formación</h3>
-          <p>Adaptamos los entrenamientos a cada edad: desde los primeros pasos sin ruedines hasta la iniciación a la competición técnica. Nuestros monitores titulados acompañan a los chavales en todo el proceso.</p>
-          <a href="contacto.html" class="btn btn-secondary">¡Apúntate!</a>
+      <div class="escuela-galeria">
+        <img src="img/escuela/escuela-base.jpg" alt="Escuela Iturribero 1">
+        <img src="img/escuela/escuela-base1.jpg" alt="Escuela Iturribero 2">
+        <img src="img/escuela/escuela-base2.jpg" alt="Escuela Iturribero 3">
+        <img src="img/escuela/escuela-base3.jpg" alt="Escuela Iturribero 4">
+        <img src="img/escuela/escuela-base4.jpg" alt="Escuela Iturribero 5">
+      </div>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <h3>Niveles de formación</h3>
+        <p style="max-width: 800px; margin: 1rem auto;">Adaptamos los entrenamientos a cada edad: desde los primeros pasos sin ruedines hasta la iniciación a la competición técnica. Nuestros monitores titulados acompañan a los chavales en todo el proceso.</p>
+        <div style="margin-top: 1.5rem;">
+            <a href="contacto.html" class="btn btn-secondary">¡Apúntate!</a>
         </div>
       </div>
     </div>
@@ -69,8 +69,11 @@
     document.addEventListener("DOMContentLoaded", () => {
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.getElementById('menu-list');
+        
         if (menuToggle && menuList) {
-            menuToggle.addEventListener('click', () => { menuList.classList.toggle('active'); });
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
         }
     });
   </script>
