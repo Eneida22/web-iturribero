@@ -574,7 +574,7 @@ body {
    AJUSTE DE CABECERA DE ESCUELA (NUEVO)
    ========================================================= */
 .hero-escuela {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/escuela/cabecera-escuela.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/equipos/foto-equipo-cx.jpg');
     background-size: cover;
     background-position: center 80%; /* Bajamos la imagen para que el almacén ocupe más arriba */
     min-height: 50vh;
