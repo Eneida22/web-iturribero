@@ -571,6 +571,35 @@ body {
 }
 
 /* =========================================================
+   ESTILOS ESPECÍFICOS: PÁGINA DE ESCUELA
+   ========================================================= */
+.hero-escuela {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/escuela/cabecera-escuela.jpg');
+  background-color: #555; 
+  background-size: cover;
+  background-position: center;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.intro-escuela {
+  text-align: center;
+  padding: 4rem 0 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-escuela h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================================
    DISEÑO RESPONSIVO (MÓVILES) - BLOQUE UNIFICADO
    ========================================================= */
 @media (max-width: 768px) {
