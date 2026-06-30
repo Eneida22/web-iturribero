@@ -69,6 +69,24 @@ body {
     flex-grow: 1;
 }
 
+/* Asegura que el menú se comporte igual en todas las páginas */
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Evita que elementos inesperados muevan el menú */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .menu-toggle {
   display: none;
   background: none;
