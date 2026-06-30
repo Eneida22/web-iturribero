@@ -66,5 +66,23 @@
         document.getElementById('menu-list').classList.toggle('active');
     });
   </script>
+
+  <!-- Capa del Lightbox -->
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Ampliada">
+</div>
+
+<script>
+    // Script para manejar el clic en las imágenes
+    document.querySelectorAll('.escuela-galeria img').forEach(img => {
+        img.addEventListener('click', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+</script>
+  
 </body>
 </html>
