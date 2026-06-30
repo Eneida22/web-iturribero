@@ -1,23 +1,74 @@
-<main>
-  <section class="hero-escuela">
-    <h1>Escuela de Ciclismo</h1>
-  </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escuela - CDC Iturribero</title>
+  
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
 
-  <div class="container escuelas-container">
-    <section class="intro-escuela">
-      <h2>Aprender disfrutando</h2>
-      <p>Nuestra escuela es el corazón del club. Aquí formamos a los ciclistas del futuro desde la base...</p>
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="equipos.html">Equipos</a></li>
+          <li><a href="escuela.html" style="color: #CC6A00;">Escuela</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
+          <li class="lang-switch"><a href="eu.html" aria-label="Aldatu euskarara">EU</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-escuela">
+      <h1>Escuela de Ciclismo</h1>
     </section>
 
-    <div class="equipo-row">
-      <div class="equipo-img">
-        <img src="img/equipos/escuela/escuela-base.jpg" alt="Escuela de ciclismo Iturribero">
-      </div>
-      <div class="equipo-text">
-        <h3>Niveles de formación</h3>
-        <p>Adaptamos los entrenamientos a cada edad: desde los primeros pasos sin ruedines...</p>
-        <a href="contacto.html" class="btn btn-secondary">¡Apúntate!</a>
+    <div class="container escuelas-container">
+      
+      <section class="intro-escuela">
+        <h2>Aprender disfrutando</h2>
+        <p>Desde el Club Deportivo Ciclista ITURRIBERO se entiende este deporte como un complemento a la formación como personas de todos los y las integrantes...</p>
+      </section>
+
+      <div class="equipo-row">
+        <div class="equipo-img">
+          <img src="img/equipos/escuela/escuela-base.jpg" alt="Escuela de ciclismo Iturribero">
+        </div>
+        <div class="equipo-text">
+          <h3>Niveles de formación</h3>
+          <p>Adaptamos los entrenamientos a cada edad: desde los primeros pasos sin ruedines hasta la iniciación a la competición técnica. Nuestros monitores titulados acompañan a los chavales en todo el proceso.</p>
+          <a href="contacto.html" class="btn btn-secondary">¡Apúntate!</a>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => { menuList.classList.toggle('active'); });
+        }
+    });
+  </script>
+
+</body>
+</html>
