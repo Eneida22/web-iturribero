@@ -586,9 +586,19 @@ body {
   text-align: center;
 }
 
+.hero-escuela h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.escuelas-container {
+  padding: 6rem 0;
+}
+
 .intro-escuela {
   text-align: center;
-  padding: 4rem 0 2rem 0;
+  padding: 0 0 4rem 0;
   max-width: 800px;
   margin: 0 auto;
 }
