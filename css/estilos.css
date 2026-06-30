@@ -29,8 +29,7 @@ body {
 
 /* =========================================================
    CABECERA Y NAVEGACIÓN
-   =========================================================
-*/
+   ========================================================= */
 .header {
   background-color: var(--bg-color);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -41,8 +40,11 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem 0;
 }
 
@@ -52,7 +54,7 @@ body {
 }
 
 .logo-img {
-  max-height: 85px; 
+  max-height: 85px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -61,30 +63,11 @@ body {
   transform: scale(1.05);
 }
 
-/* Fuerza al nav a ocupar el espacio restante y alinea a la derecha */
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-}
-
-/* Asegura que el menú se comporte igual en todas las páginas */
-.nav-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1;
-}
-
-/* Evita que elementos inesperados muevan el menú */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .menu-toggle {
@@ -100,37 +83,42 @@ body {
 .menu-list {
   list-style: none;
   display: flex;
-  gap: 2rem; 
+  gap: 2rem;
   align-items: center;
-  margin-left: auto; /* Empuja el menú a la derecha */
+  margin-left: auto;
 }
 
 .menu-list a {
   text-decoration: none;
-  color: var(--primary-color); 
+  color: var(--primary-color);
   font-weight: 600;
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   transition: color 0.3s;
 }
 
 .menu-list a:hover {
-  color: #CC6A00; 
+  color: #CC6A00;
+}
+
+/* Página activa */
+.menu-list a.active {
+  color: #CC6A00;
 }
 
 .btn-contacto-menu {
   background-color: var(--primary-color);
-  color: #ffffff !important; 
-  padding: 0.7rem 1.8rem; 
-  border-radius: 50px; 
+  color: #ffffff !important;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
   font-size: 1.2rem;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); 
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .btn-contacto-menu:hover {
   background-color: #CC6A00;
   color: #ffffff !important;
-  transform: translateY(-2px); 
+  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
 }
 
@@ -140,7 +128,7 @@ body {
   border: 2px solid var(--primary-color);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
-  font-size: 1.1rem; 
+  font-size: 1.1rem;
 }
 
 /* =========================================================
