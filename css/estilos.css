@@ -91,13 +91,13 @@ body {
   color: #CC6A00; 
 }
 
-/* BOTÓN DE CONTACTO EN CABECERA: Adaptado al nuevo tamaño */
+/* BOTÓN DE CONTACTO EN CABECERA */
 .btn-contacto-menu {
   background-color: var(--primary-color);
   color: #ffffff !important; 
   padding: 0.7rem 1.8rem; 
   border-radius: 50px; 
-  font-size: 1.2rem; /* Botón un poco más grande */
+  font-size: 1.2rem;
   box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); 
   transition: all 0.3s ease;
 }
@@ -109,7 +109,7 @@ body {
   box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
 }
 
-/* SELECTOR DE IDIOMA: Un poco más grande también */
+/* SELECTOR DE IDIOMA */
 .lang-switch a {
   font-weight: bold;
   color: var(--primary-color);
@@ -120,25 +120,25 @@ body {
 }
 
 /* =========================================================
-   SECCIÓN HERO (IMAGEN RESPONSIVA COMPLETA)
+   SECCIÓN HERO (PORTADA)
    =========================================================
 */
 .hero {
   width: 100%;
   background-color: #f4f4f4; 
-  overflow: hidden; /* Esconde cualquier sobrante de la foto */
+  overflow: hidden;
 }
 
 .hero-img {
   width: 100%;
-  max-height: 65vh; /* LÍMITE: No ocupará más del 65% del alto de tu pantalla */
-  object-fit: cover; /* Adapta la foto al contenedor como un guante */
-  object-position: bottom center; /* CLAVE: Ancla la foto abajo para no cortar ni los coches ni al equipo */
+  max-height: 65vh;
+  object-fit: cover;
+  object-position: bottom center;
   display: block; 
 }
 
 /* =========================================================
-   BOTONES MODERNOS (Estilo Agencia)
+   BOTONES MODERNOS
    =========================================================
 */
 .btn {
@@ -407,6 +407,79 @@ body {
 }
 
 /* =========================================================
+   ESTILOS ESPECÍFICOS: PÁGINA DE EQUIPOS
+   ========================================================= */
+.hero-equipos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/equipos/cabecera-equipos.jpg');
+  background-color: #555; 
+  background-size: cover;
+  background-position: center 75%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-equipos h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.equipos-container {
+  padding: 6rem 0;
+}
+
+.equipo-row {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 6rem;
+}
+
+.equipo-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.equipo-img {
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.equipo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.equipo-img:hover img {
+  transform: scale(1.05);
+}
+
+.equipo-text {
+  flex: 1;
+}
+
+.equipo-text h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.equipo-text p {
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* =========================================================
    DISEÑO RESPONSIVO (MÓVILES) - BLOQUE UNIFICADO
    ========================================================= */
 @media (max-width: 768px) {
@@ -448,5 +521,16 @@ body {
   }
   .elite-section { 
     padding: 2rem; 
+  }
+
+  /* Reglas de la página de Equipos */
+  .equipos-container { 
+    padding: 3rem 0; 
+  }
+  .equipo-row, .equipo-row.reverse {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
   }
 }
