@@ -74,23 +74,44 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // Seleccionamos todas las imágenes de la galería
-        const images = document.querySelectorAll('.escuela-galeria img');
+        const images = Array.from(document.querySelectorAll('.escuela-galeria img'));
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
+        let currentIndex = 0;
 
-        images.forEach(img => {
+        const showImage = (index) => {
+            lightboxImg.src = images[index].src;
+            currentIndex = index;
+        };
+
+        images.forEach((img, index) => {
             img.addEventListener('click', () => {
-                lightboxImg.src = img.src; // Pasa la ruta al contenedor
-                lightbox.style.display = 'flex'; // Muestra la capa
+                showImage(index);
+                lightbox.style.display = 'flex';
             });
+        });
+
+        document.getElementById('next-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage((currentIndex + 1) % images.length);
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage((currentIndex - 1 + images.length) % images.length);
+        });
+
+        document.getElementById('close-btn').addEventListener('click', () => {
+            lightbox.style.display = 'none';
         });
     });
 </script>
 
-  <!-- Capa del Lightbox (asegúrate de que está fuera de otros divs) -->
-<div id="lightbox" onclick="this.style.display='none'">
+<div id="lightbox">
+    <span id="close-btn">&times;</span>
+    <span id="prev-btn">&#10094;</span>
     <img id="lightbox-img" src="" alt="Ampliada">
+    <span id="next-btn">&#10095;</span>
 </div>
   
 </body>
