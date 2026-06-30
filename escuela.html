@@ -9,20 +9,49 @@
 <body>
 
   <header class="header">
-  <div class="container header-container">
-    <a href="index.html" class="logo"><img src="img/logo/logo-iturribero.png" alt="Logo" class="logo-img"></a>
-    <!-- Añadimos la clase 'nav-container' para asegurar el posicionamiento -->
-    <nav class="nav nav-container">
-      <button class="menu-toggle">Menú</button>
-      <ul class="menu-list" id="menu-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="historia.html">Historia</a></li>
-        <li><a href="equipos.html">Equipos</a></li>
-        <li><a href="escuela.html" style="color: #CC6A00;">Escuela</a></li>
-        <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
+    <div class="container header-container">
+
+        <a href="index.html" class="logo" aria-label="Inicio">
+            <img src="img/logo/logo-iturribero.png"
+                 alt="C.D. Ciclista Iturribero Durana"
+                 class="logo-img">
+        </a>
+
+        <nav class="nav">
+
+            <button class="menu-toggle"
+                    aria-expanded="false"
+                    aria-controls="menu-list">
+                Menú
+            </button>
+
+            <ul class="menu-list" id="menu-list">
+
+                <li><a href="index.html">Inicio</a></li>
+
+                <li><a href="historia.html">Historia</a></li>
+
+                <li><a href="equipos.html">Equipos</a></li>
+
+                <li><a href="escuela.html" class="active">Escuela</a></li>
+
+                <li>
+                    <a href="contacto.html" class="btn-contacto-menu">
+                        Contacto
+                    </a>
+                </li>
+
+                <li class="lang-switch">
+                    <a href="eu.html" aria-label="Aldatu euskarara">
+                        EU
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
 </header>
 
   <main>
@@ -63,8 +92,17 @@
   </footer>
 
   <script>
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.getElementById('menu-list').classList.toggle('active');
+    document.addEventListener("DOMContentLoaded", () => {
+    
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menuList = document.getElementById("menu-list");
+    
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener("click", () => {
+                menuList.classList.toggle("active");
+            });
+        }
+    
     });
   </script>
 
