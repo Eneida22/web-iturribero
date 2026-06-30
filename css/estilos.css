@@ -61,6 +61,14 @@ body {
   transform: scale(1.05);
 }
 
+/* Fuerza al nav a ocupar el espacio restante y alinea a la derecha */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -76,6 +84,7 @@ body {
   display: flex;
   gap: 2rem; 
   align-items: center;
+  margin-left: auto; /* Empuja el menú a la derecha */
 }
 
 .menu-list a {
