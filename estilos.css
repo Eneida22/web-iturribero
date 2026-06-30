@@ -1,0 +1,320 @@
+/* VARIABLES DE COLOR PERSONALIZADAS */
+:root {
+  --primary-color: #FF8C00; /* Naranja Iturribero */
+  --secondary-color: #f8f9fa;
+  --text-color: #333333;
+  --bg-color: #ffffff;
+  --footer-bg: #212529;
+  --font-base: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CABECERA Y NAVEGACIÓN
+   =========================================================
+*/
+.header {
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  max-height: 85px; 
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem; 
+  align-items: center;
+}
+
+/* MENÚ: Letra aumentada a 1.3rem */
+.menu-list a {
+  text-decoration: none;
+  color: var(--primary-color); 
+  font-weight: 600;
+  font-size: 1.3rem; 
+  transition: color 0.3s;
+}
+
+.menu-list a:hover {
+  color: #CC6A00; 
+}
+
+/* BOTÓN DE CONTACTO EN CABECERA: Adaptado al nuevo tamaño */
+.btn-contacto-menu {
+  background-color: var(--primary-color);
+  color: #ffffff !important; 
+  padding: 0.7rem 1.8rem; 
+  border-radius: 50px; 
+  font-size: 1.2rem; /* Botón un poco más grande */
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); 
+  transition: all 0.3s ease;
+}
+
+.btn-contacto-menu:hover {
+  background-color: #CC6A00;
+  color: #ffffff !important;
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+}
+
+/* SELECTOR DE IDIOMA: Un poco más grande también */
+.lang-switch a {
+  font-weight: bold;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 1.1rem; 
+}
+
+/* =========================================================
+   SECCIÓN HERO (IMAGEN RESPONSIVA COMPLETA)
+   =========================================================
+*/
+.hero {
+  width: 100%;
+  background-color: #f4f4f4; 
+  overflow: hidden; /* Esconde cualquier sobrante de la foto */
+}
+
+.hero-img {
+  width: 100%;
+  max-height: 65vh; /* LÍMITE: No ocupará más del 65% del alto de tu pantalla */
+  object-fit: cover; /* Adapta la foto al contenedor como un guante */
+  object-position: bottom center; /* CLAVE: Ancla la foto abajo para no cortar ni los coches ni al equipo */
+  display: block; 
+}
+
+/* =========================================================
+   BOTONES MODERNOS (Estilo Agencia)
+   =========================================================
+*/
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 50px; 
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4); 
+}
+
+.btn-secondary:hover {
+  background-color: #CC6A00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+}
+
+/* =========================================================
+   TARJETAS DE INFORMACIÓN
+   =========================================================
+*/
+.info-section {
+  display: flex;
+  gap: 3rem; 
+  padding: 6rem 0; 
+}
+
+.card {
+  flex: 1;
+  background: var(--bg-color); 
+  padding: 3rem; 
+  border-radius: 20px; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+  display: flex;
+  flex-direction: column;
+  text-align: left; 
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.03); 
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+  margin-bottom: 1.2rem;
+  color: var(--text-color); 
+  font-size: 2rem;
+}
+
+.card p {
+  margin-bottom: 2.5rem;
+  font-size: 1.15rem;
+  line-height: 1.7; 
+  color: #666666; 
+  flex-grow: 1; 
+}
+
+.card .btn {
+  width: 100%;
+  text-align: center;
+}
+  
+/* =========================================================
+   CARRUSEL DE PATROCINADORES
+   ========================================================= */
+
+.sponsors-section {
+    background-color: var(--bg-color);
+    padding: 4rem 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.sponsors-slider {
+    overflow: hidden;
+    position: relative;
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+}
+
+.sponsors-track {
+    display: flex;
+    width: max-content;
+}
+
+.sponsors-group {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding-right: 5rem;
+    flex-shrink: 0;
+}
+
+.sponsor-logo {
+    height: 70px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+
+    filter: grayscale(100%) opacity(60%);
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+    flex-shrink: 0;
+}
+
+.sponsor-logo:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.08);
+}
+
+/* Pie de página */
+.footer {
+  background-color: var(--footer-bg);
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 2.5rem;
+}
+
+/* Diseño Responsivo (Móviles) */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-color);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+/* Esta es la clase que aplicaremos al pulsar el botón */
+.menu-list.active {
+  display: flex;
+}
+  .info-section {
+    flex-direction: column;
+    padding: 3rem 0;
+  }
+}
