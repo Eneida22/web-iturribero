@@ -652,6 +652,100 @@ body {
 }
 
 /* =========================================================
+   PÁGINA DE CONTACTO (MAPA Y FORMULARIO)
+   ========================================================= */
+.hero-contacto {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/equipos/cabecera-equipos.jpg'); /* Cambia la ruta si tienes foto de contacto */
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.contacto-container {
+    padding: 5rem 0;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 4rem;
+    align-items: start;
+}
+
+.contacto-mapa iframe {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contacto-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.contacto-datos h3, .contacto-formulario h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.contacto-datos p {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+.contacto-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-base);
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+}
+
+.contacto-formulario input:focus,
+.contacto-formulario textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.2);
+}
+
+.contacto-formulario button {
+    align-self: flex-start; /* El botón no ocupa todo el ancho */
+    font-size: 1.1rem;
+    padding: 1rem 3rem;
+}
+
+/* Ajuste Responsivo para móviles */
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr; /* Pasa a una sola columna en móvil */
+        gap: 3rem;
+    }
+    .contacto-mapa iframe {
+        height: 350px; /* Mapa más pequeño en móviles */
+    }
+}
+
+/* =========================================================
    EFECTO LIGHTBOX (SOLO ESTO AL FINAL)
    ========================================================= */
 .escuela-galeria img { cursor: pointer; }
