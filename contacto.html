@@ -8,17 +8,18 @@
 </head>
 <body>
 
+  <!-- CABECERA IDÉNTICA AL RESTO DE PÁGINAS -->
   <header class="header">
     <div class="container header-container">
       <a href="index.html" class="logo"><img src="img/logo/logo-iturribero.png" alt="Logo" class="logo-img"></a>
-      <nav class="nav nav-container">
+      <nav class="nav">
         <button class="menu-toggle">Menú</button>
         <ul class="menu-list" id="menu-list">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="historia.html">Historia</a></li>
           <li><a href="equipos.html">Equipos</a></li>
           <li><a href="escuela.html">Escuela</a></li>
-          <li><a href="contacto.html" class="active" style="color: #CC6A00;">Contacto</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu" style="background-color: #CC6A00;">Contacto</a></li>
           <li class="lang-switch"><a href="eu.html" aria-label="Aldatu euskarara">EU</a></li>
         </ul>
       </nav>
@@ -26,14 +27,18 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero-contacto">
       <h1>Contacta con nosotros</h1>
     </section>
 
+    <!-- SECCIÓN PRINCIPAL: MAPA Y FORMULARIO -->
     <div class="container contacto-container">
       <div class="contacto-grid">
         
+        <!-- COLUMNA IZQUIERDA: MAPA DE GOOGLE -->
         <div class="contacto-mapa">
+          <!-- El iframe carga el mapa centrado en vuestra dirección -->
           <iframe 
             src="https://maps.google.com/maps?q=Iturribero%20Kalea,%203,%2001520%20Durana,%20Araba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
@@ -44,24 +49,33 @@
           </iframe>
         </div>
 
+        <!-- COLUMNA DERECHA: INFO Y FORMULARIO -->
         <div class="contacto-info-form">
           
+          <!-- Datos Rápidos -->
           <div class="contacto-datos">
             <h3>Nuestros Datos</h3>
             <p><strong>📍 Dirección:</strong> Iturribero Kalea, 3, 01520 - Durana (Araba)</p>
             <p><strong>✉️ Email:</strong> cdciturribero@gmail.com</p>
           </div>
 
+          <!-- Formulario funcional con FormSubmit -->
           <div class="contacto-formulario">
             <h3>Envíanos un mensaje</h3>
+            <!-- ACTION apunta al servicio con tu correo -->
             <form action="https://formsubmit.co/cdciturribero@gmail.com" method="POST">
               
+              <!-- Campos del formulario -->
               <input type="text" name="nombre" placeholder="Tu Nombre completo" required>
               <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
               <input type="text" name="asunto" placeholder="Asunto (Ej: Inscripción Escuela)" required>
               <textarea name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje o consulta..." required></textarea>
               
+              <!-- Configuración oculta de FormSubmit para evitar Spam -->
               <input type="hidden" name="_captcha" value="false">
+              <!-- Quita el comentario de abajo y pon tu web si quieres que tras enviar vuelva a tu página -->
+              <!-- <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html"> -->
+
               <button type="submit" class="btn btn-secondary">Enviar Mensaje</button>
             </form>
           </div>
@@ -71,9 +85,11 @@
     </div>
   </main>
 
+  <!-- PIE DE PÁGINA COMPLETO -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
     </div>
   </footer>
 
