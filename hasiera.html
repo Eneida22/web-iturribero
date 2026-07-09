@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Deportivo Ciclista Iturribero - Durana</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="equipos.html">Equipos</a></li>
+          <li><a href="escuela.html">Escuela</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
+			<li class="lang-switch">
+			  <a href="index.html" aria-label="Cambiar a castellano">ES</a>
+			  <span class="separator">|</span>
+			  <a href="#" class="active" aria-label="Euskara">EU</a>
+			</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Fotografía del equipo CDC Iturribero">
+      <img src="img/inicio/foto-equipos.jpg" alt="Equipos y vehículos del Club Ciclista Iturribero" class="hero-img">
+    </section>
+
+    <section class="info-section container">
+      <div class="card">
+        <h2>Sobre Nosotros</h2>
+        <p>Con más de 40 años de historia, son muchos los niños y niñas que se han iniciado en la práctica ciclista bajo nuestra tutela en Durana.</p>
+        <a href="historia.html" class="btn btn-secondary">Nuestra Historia</a>
+      </div>
+      <div class="card">
+        <h2>CDC Iturribero</h2>
+        <p>Txirrindularien Kirol Elkartea. Prepara tu bici, ajusta el portabicicletas y únete a nuestra gran familia ciclista.</p>
+        <a href="contacto.html" class="btn btn-secondary">Apúntate y ven a disfrutar</a>
+      </div>
+    </section>
+
+    <section class="sponsors-section">
+        <div class="sponsors-slider">
+            <div class="sponsors-track" id="sponsorsTrack">
+                <div class="sponsors-group">
+                    <img src="img/patrocinadores/logo-invitec.png" alt="Invitec" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-palettransport.png" alt="Palet Transport" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-raulquintana.png" alt="Raúl Quintana" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-txapeldun.png" alt="Txapeldun" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-kalas.png" alt="Kalas" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-rpk.png" alt="RPK" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-fincasuleta.png" alt="Fincas Uleta" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-ikasbideaikastolaipi.png" alt="Ikasbidea Ikastola IPI" class="sponsor-logo">
+                    <img src="img/patrocinadores/logo-fundacionvital.png" alt="Fundación Vital" class="sponsor-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // --- CÓDIGO DEL MENÚ MÓVIL ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if(menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+
+        // --- CÓDIGO DEL CARRUSEL ---
+        const track = document.getElementById("sponsorsTrack");
+        if(track) {
+            const group = track.querySelector(".sponsors-group");
+            track.appendChild(group.cloneNode(true));
+            let groupWidth = group.offsetWidth;
+            let position = 0;
+            let speed = 0.35;
+            let paused = false;
+
+            window.addEventListener("resize", () => {
+                groupWidth = group.offsetWidth;
+            });
+
+            track.addEventListener("mouseenter", () => {
+                paused = true;
+            });
+
+            track.addEventListener("mouseleave", () => {
+                paused = false;
+            });
+
+            function animate() {
+                if (!paused) {
+                    position -= speed;
+                    if (Math.abs(position) >= groupWidth) {
+                        position = 0;
+                    }
+                    track.style.transform = `translateX(${position}px)`;
+                }
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+    });
+  </script>
+</body>
+</html>
