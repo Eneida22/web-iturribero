@@ -133,10 +133,9 @@ body {
   font-size: 1.1rem;
   margin-left: 1rem;
 }
-
 .lang-switch a {
   text-decoration: none;
-  color: var(--text-color); /* Color oscuro por defecto */
+  color: #999999; /* Gris suave para el idioma inactivo */
   padding: 0;
   border: none;
   transition: color 0.3s ease;
