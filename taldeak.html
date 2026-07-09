@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipos - CDC Iturribero</title>
+  
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="hasiera.html" class="logo" aria-label="Hasiera">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menu</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="hasiera.html">Hasiera</a></li>
+          <li><a href="historia-eu.html">Historia</a></li>
+          <li><a href="taldeak.html" style="color: #CC6A00;">Taldeak</a></li>
+          <li><a href="eskola.html">Eskola</a></li>
+          <li><a href="kontaktua.html" class="btn-contacto-menu">Kontaktua</a></li>
+          <li class="lang-switch">
+            <a href="escuela.html" aria-label="Cambiar a castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="#" class="active" aria-label="Euskara">EU</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-equipos">
+      <h1>Taldeak</h1>
+    </section>
+
+    <div class="container equipos-container">
+      
+      <div class="equipo-row">
+        <div class="equipo-img">
+          <img src="img/historia/foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles">
+        </div>
+        <div class="equipo-text">
+          <h2>Invitec Iturribero</h2>
+          <p>Kadeteak, Juniorrak ...</p>
+          <a href="equipo-invitec.html" class="btn btn-secondary">Jarraitu irakurtzen...</a>
+        </div>
+      </div>
+
+      <div class="equipo-row reverse">
+        <div class="equipo-img">
+          <img src="img/equipos/foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross">
+        </div>
+        <div class="equipo-text">
+          <h2>CX Iturribero</h2>
+          <p>Frogatzen baduzu, ez duzu ahaztuko. Agian azkartasun-sentsazioagatik, lasterketa-arintasunagatik eta irteera ematen dizutenean inbaditzen zaituen adrenalina horrengatik izango da. 3,2,1... Sua! Ziklo-krosa...</p>
+          <a href="#" class="btn btn-secondary">Jarraitu irakurtzen...</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Eskubide guztiak erreserbatuta.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
