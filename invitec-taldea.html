@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitec Iturribero - CDC Iturribero</title>
+  
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="equipos.html" style="color: #CC6A00;">Equipos</a></li>
+          <li><a href="escuela.html">Escuela</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
+          <li class="lang-switch">
+            <a href="index.html" aria-label="Cambiar a castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="#" class="active" aria-label="Euskara">EU</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-roster">
+      <div>
+        <h1>Invitec Iturribero</h1>
+        <p>Temporada 2026</p>
+      </div>
+    </section>
+
+    <div class="container roster-section">
+      <h2>Cadetes</h2>
+      
+      <div class="roster-grid">
+        
+        <div class="rider-card">
+          <img src="img/equipos/cadetes/foto-aitor-esteban.jpg" alt="Aitor Esteban" class="rider-img">
+          <div class="rider-info">
+            <h3>Aitor Esteban</h3>
+          </div>
+        </div>
+
+        <div class="rider-card">
+          <img src="img/equipos/cadetes/foto-aitor-michelena.jpg" alt="Aitor Michelena" class="rider-img">
+          <div class="rider-info">
+            <h3>Aitor Michelena</h3>
+          </div>
+        </div>
+        
+        <div class="rider-card">
+          <img src="img/equipos/cadetes/foto-asier-alonso.jpg" alt="Asier Alonso" class="rider-img">
+          <div class="rider-info">
+            <h3>Asier Alonso</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
