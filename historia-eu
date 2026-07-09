@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia - CDC Iturribero</title>
+  
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Hasiera</a></li>
+          <li><a href="historia.html" style="color: #CC6A00;">Historia</a></li>
+          <li><a href="equipos.html">Taldeak</a></li>
+          <li><a href="escuela.html">Eskola</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu">Kontaktua</a></li>
+          <li class="lang-switch">
+            <a href="#" class="active" aria-label="Castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="historia.html" aria-label="Aldatu euskarara">EU</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-historia">
+      <h1>Nuestra Historia</h1>
+    </section>
+
+    <div class="container historia-container">
+      
+      <div class="historia-grid">
+        <div class="historia-texto">
+          <p class="letra-capital">CDC ITURRIBERO, irabazi asmorik gabeko Txirrindularien Kirol Elkartea den aldetik, Eusko Jaurlaritzako Elkarteen Erregistroan inskribatuta dago. 1987tik, baina, egiazki, askoz lehenago hasi zen dena, 81. urtetik aurrera.</p>
+          <p>Duranako Ikasbidea ikastolari atxikitako guraso-talde batek sortu zuen. 40 urte baino gehiago daramatzagu gure bizkar, eta Kluba bizirik mantendu da familia horien ekarpen nekaezinarekin eta Ikastolako IGEaren laguntzarekin 2011tik, inguruko hainbat enpresa eta erakunderen babesa batuz.</p>
+          <p>Gaur egun, hainbat ikastetxetako haurrek egiten dute txirrindularitza gurekin, lehen eguneko ilusioa bere horretan mantenduz. Gaur egun, klubaren bidez kirolera hurbildu ziren haur horietako batzuk belaunaldi berri horien gurasoak dira.</p>
+        </div>
+        
+        <div class="historia-imagen">
+          <div class="collage-historia">
+            <img src="img/historia/foto-antigua-1.jpg" alt="Equipo Iturribero original" class="foto-principal">
+            <img src="img/historia/foto-antigua-2.jpg" alt="Jóvenes ciclistas" class="foto-secundaria">
+            <img src="img/historia/foto-antigua-3.jpg" alt="Ciclista firmando autógrafos" class="foto-secundaria">
+          </div>
+        </div>
+      </div>
+
+      <div class="elite-section">
+        <h2>Harrobitik elitera</h2>
+        <p>Asko dira gure babespean hasi direnak. Gure Klubeko kide ohiek txirrindularitza izan dute bizibide, eta Txirrindularitza Profesionaleko elitean lehiatu dira. Gure eskola inspiratzen jarraitzen duen harrotasuna.</p>
+        
+        <div class="pro-tags">
+          <span class="pro-tag">Joseba Beloki</span>
+          <span class="pro-tag">Gorka Beloki</span>
+          <span class="pro-tag">Aitor Quintana</span>
+          <span class="pro-tag">Unai Yus</span>
+          <span class="pro-tag">Iker Ballarin</span>
+          <span class="pro-tag">Unai Cuadrado</span>
+          <span class="pro-tag">Oier Lazkano</span>
+          <span class="pro-tag">Imanol Estevez</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Eskubide guztiak erreserbatuta</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
