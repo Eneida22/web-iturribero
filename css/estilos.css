@@ -135,7 +135,7 @@ body {
 }
 .lang-switch a {
   text-decoration: none;
-  color: #999999; /* Gris suave para el idioma inactivo */
+  color: #777777; /* Gris un poco más oscuro para el idioma inactivo */
   padding: 0;
   border: none;
   transition: color 0.3s ease;
