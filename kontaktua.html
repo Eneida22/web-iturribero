@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontaktua - CDC Iturribero</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="hasiera.html" class="logo" aria-label="Hasiera"><img src="img/logo/logo-iturribero.png" alt="Logo" class="logo-img"></a>
+      <nav class="nav">
+        <!-- Botón menú móvil traducido -->
+        <button class="menu-toggle">Menu</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="hasiera.html">Hasiera</a></li>
+          <li><a href="historia-eu.html">Historia</a></li>
+          <li><a href="taldeak.html">Taldeak</a></li>
+          <li><a href="eskola.html">Eskola</a></li>
+          <!-- Botón de contacto activo -->
+          <li><a href="kontaktua.html" class="btn-contacto-menu" style="background-color: #CC6A00;">Kontaktua</a></li>
+          <li class="lang-switch">
+            <!-- Enlaces de idioma invertidos -->
+            <a href="contacto.html" aria-label="Cambiar a castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="#" class="active" aria-label="Euskara">EU</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-contacto">
+      <h1>Jarri gurekin harremanetan</h1>
+    </section>
+
+    <div class="container contacto-container">
+      <div class="contacto-grid">
+        
+        <div class="contacto-mapa">
+          <iframe 
+            src="https://maps.google.com/maps?q=Iturribero%20Kalea,%203,%2001520%20Durana,%20Araba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="550" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="contacto-info-form">
+          
+          <div class="contacto-datos">
+            <h3>Gure datuak</h3>
+            <p><strong>📍 Helbidea:</strong> Iturribero Kalea, 3, 01520 - Durana (Araba)</p>
+            <p><strong>✉️ E-mail:</strong> cdciturribero@gmail.com</p>
+          </div>
+
+          <div class="contacto-formulario">
+            <h3>Bidali mezu bat</h3>
+            <form action="https://formsubmit.co/cdciturribero@gmail.com" method="POST">
+              
+              <!-- Campos traducidos -->
+              <input type="text" name="nombre" placeholder="Izen-abizenak" required>
+              <input type="email" name="email" placeholder="Posta elektronikoa" required>
+              <input type="text" name="asunto" placeholder="Gaia (Adibidez: Eskolan izena ematea)" required>
+              <textarea name="mensaje" rows="5" placeholder="Idatzi hemen zure mezua edo kontsulta..." required></textarea>
+              
+              <input type="hidden" name="_captcha" value="false">
+              <!-- <input type="hidden" name="_next" value="https://tu-dominio.com/eskerrik-asko.html"> -->
+
+              <button type="submit" class="btn btn-secondary">Mezua bidali</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Eskubide guztiak erreserbatuta.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.getElementById('menu-list').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
