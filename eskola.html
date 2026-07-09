@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipos - CDC Iturribero</title>
+  
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="equipos.html" style="color: #CC6A00;">Equipos</a></li>
+          <li><a href="escuela.html">Escuela</a></li>
+          <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
+          <li class="lang-switch">
+            <a href="index.html" aria-label="Cambiar a castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="escuela.html" class="active" aria-label="Euskara">EU</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-equipos">
+      <h1>Equipos</h1>
+    </section>
+
+    <div class="container equipos-container">
+      
+      <div class="equipo-row">
+        <div class="equipo-img">
+          <img src="img/historia/foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles">
+        </div>
+        <div class="equipo-text">
+          <h2>Invitec Iturribero</h2>
+          <p>Cadetes Juveniles...</p>
+          <a href="equipo-invitec.html" class="btn btn-secondary">Seguir leyendo...</a>
+        </div>
+      </div>
+
+      <div class="equipo-row reverse">
+        <div class="equipo-img">
+          <img src="img/equipos/foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross">
+        </div>
+        <div class="equipo-text">
+          <h2>CX Iturribero</h2>
+          <p>Si lo pruebas, no lo olvidarás. Quizá sea por la sensación de rapidez, fluidez de carrera y esa adrenalina que te invade cuando dan la salida. 3,2,1... ¡FUEGO! El ciclocross es...</p>
+          <a href="#" class="btn btn-secondary">Seguir leyendo...</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
