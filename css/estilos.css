@@ -122,13 +122,42 @@ body {
   box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
 }
 
-.lang-switch a {
+/* =========================================================
+   SELECTOR DE IDIOMA (ESTILO TEXTO)
+   ========================================================= */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: bold;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
   font-size: 1.1rem;
+  margin-left: 1rem;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  color: var(--text-color); /* Color oscuro por defecto */
+  padding: 0;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.lang-switch a:hover {
+  color: var(--primary-color); /* Se pone naranja al pasar el ratón */
+}
+
+/* El idioma en el que estamos actualmente */
+.lang-switch a.active {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 4px; /* Separa un poco la línea del texto */
+}
+
+/* La barra separadora */
+.lang-switch .separator {
+  color: #cccccc;
+  user-select: none;
+  font-weight: normal;
 }
 
 /* =========================================================
