@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CX Iturribero - CDC Iturribero</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="hasiera.html" class="logo" aria-label="Hasiera">
+        <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
+      </a>
+      <nav class="nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menua</button>
+        <ul class="menu-list" id="menu-list">
+          <li><a href="hasiera.html">Hasiera</a></li>
+          <li><a href="historia-eu.html">Historia</a></li>
+          <li><a href="taldeak.html" style="color: #CC6A00;">Taldeak</a></li>
+          <li><a href="eskola.html">Eskola</a></li>
+          <li><a href="kontaktua.html" class="btn-contacto-menu">Kontaktua</a></li>
+          <li class="lang-switch">
+            <a href="CX-Iturribero.html" aria-label="Cambiar a castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="#" class="active" aria-label="Euskara">EU</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-equipos">
+      <h1>CX Iturribero</h1>
+    </section>
+
+    <div class="container equipos-container">
+      <div class="equipo-text" style="max-width: 900px; margin: 0 auto; padding: 3rem 0; line-height: 1.8; color: #444; font-size: 1.1rem;">
+        
+        <p style="margin-bottom: 2rem;">Probatu ezkero, ez duzu ahaztuko. Beharbada abiadura sentsazioagatik, lasterketaren arintasunagatik eta irteera ematen dutenean inbaditzen zaituen adrenalina horregatik izango da. 3,2,1... SUA! Ziklokrosa mundu osoan zale asko dituen txirrindularitza espezialitatea da. Bereziki Belgikan, munduko txapeldun gehienak eta txirrindularitza zaleen zati handiena biltzen dituen herrialdean.</p>
+        
+        <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Zer da ziklokrosa?</h2>
+        
+        <p style="margin-bottom: 1.5rem;">Ziklokrosa neguan korritzen den txirrindularitza diziplina bat da, zehazki irailetik otsailera edo martxora arte. Leherkortasuna eta intentsitatea saritzen dituen diziplina da.</p>
+        
+        <p style="margin-bottom: 1.5rem;">Irteera emateko unean, txirrindulariek pultsazioen gailurra lortzen dute saio osoan zehar erritmo bizkorrak mantentzeko.</p>
+        
+        <p style="margin-bottom: 2rem;">Ziklokrosa belardietan, gune lauetan edo parkeetan ere korritzen da, non kurba ugari, bizikleta gainean (edo korrika) pasatzeko harea-bankuak eta lokatz asko aurkitzea erraza den. Benetako ikuskizuna da ikuslearentzat, baina baita txirrindulariarentzat ere, benetan dibertigarria baita.</p>
+        
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Eskubide guztiak erreserbatuta.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #aaa;">Iturribero Kalea, 3 - 01520 - Durana (Araba)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        
+        if (menuToggle && menuList) {
+            menuToggle.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
