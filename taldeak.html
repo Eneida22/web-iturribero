@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipos - CDC Iturribero</title>
+  <title>Taldeak - CDC Iturribero</title>
   
   <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -15,7 +15,7 @@
         <img src="img/logo/logo-iturribero.png" alt="C.D. Ciclista Iturribero Durana" class="logo-img">
       </a>
       <nav class="nav">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menu</button>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menua</button>
         <ul class="menu-list" id="menu-list">
           <li><a href="hasiera.html">Hasiera</a></li>
           <li><a href="historia-eu.html">Historia</a></li>
@@ -41,7 +41,8 @@
       
       <div class="equipo-row">
         <div class="equipo-img">
-          <img src="img/historia/foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles">
+          <!-- Añadido el cursor pointer -->
+          <img src="img/historia/foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles" style="cursor: pointer;">
         </div>
         <div class="equipo-text">
           <h2>Invitec Iturribero</h2>
@@ -52,7 +53,8 @@
 
       <div class="equipo-row reverse">
         <div class="equipo-img">
-          <img src="img/equipos/foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross">
+          <!-- Añadido el cursor pointer -->
+          <img src="img/equipos/foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross" style="cursor: pointer;">
         </div>
         <div class="equipo-text">
           <h2>CX Iturribero</h2>
@@ -71,14 +73,65 @@
     </div>
   </footer>
 
+  <!-- ESTRUCTURA DEL LIGHTBOX -->
+  <div id="lightbox">
+      <span id="close-btn">&times;</span>
+      <span id="prev-btn">&#10094;</span>
+      <img id="lightbox-img" src="" alt="Ampliada">
+      <span id="next-btn">&#10095;</span>
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // --- Menú Móvil ---
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.getElementById('menu-list');
         
         if (menuToggle && menuList) {
             menuToggle.addEventListener('click', () => {
                 menuList.classList.toggle('active');
+            });
+        }
+
+        // --- Lightbox para las imágenes de Equipos ---
+        const images = Array.from(document.querySelectorAll('.equipo-img img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        
+        if(lightbox && images.length > 0) {
+            let currentIndex = 0;
+
+            const showImage = (index) => {
+                lightboxImg.src = images[index].src;
+                currentIndex = index;
+            };
+
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    showImage(index);
+                    lightbox.style.display = 'flex';
+                });
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showImage((currentIndex + 1) % images.length);
+            });
+
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showImage((currentIndex - 1 + images.length) % images.length);
+            });
+
+            closeBtn.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) lightbox.style.display = 'none';
             });
         }
     });
