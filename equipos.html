@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipos - CDC Iturribero</title>
+  <title>Historia - CDC Iturribero</title>
   
   <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -18,14 +18,14 @@
         <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list">Menú</button>
         <ul class="menu-list" id="menu-list">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="equipos.html" style="color: #CC6A00;">Equipos</a></li>
+          <li><a href="historia.html" style="color: #CC6A00;">Historia</a></li>
+          <li><a href="equipos.html">Equipos</a></li>
           <li><a href="escuela.html">Escuela</a></li>
           <li><a href="contacto.html" class="btn-contacto-menu">Contacto</a></li>
           <li class="lang-switch">
-          <a href="#" class="active" aria-label="Castellano">ES</a>
-          <span class="separator">|</span>
-          <a href="taldeak.html" aria-label="Aldatu euskarara">EU</a>
+            <a href="#" class="active" aria-label="Castellano">ES</a>
+            <span class="separator">|</span>
+            <a href="historia-eu.html" aria-label="Aldatu euskarara">EU</a>
           </li>
         </ul>
       </nav>
@@ -33,31 +33,41 @@
   </header>
 
   <main>
-    <section class="hero-equipos">
-      <h1>Equipos</h1>
+    <section class="hero-historia">
+      <h1>Nuestra Historia</h1>
     </section>
 
-    <div class="container equipos-container">
+    <div class="container historia-container">
       
-      <div class="equipo-row">
-        <div class="equipo-img">
-          <img src="img/historia/foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles">
+      <div class="historia-grid">
+        <div class="historia-texto">
+          <p class="letra-capital">El CDC ITURRIBERO, como Club Deportivo Ciclista sin ánimo de lucro, lleva inscrito en el Registro de Asociaciones del Gobierno Vasco desde 1987, pero realmente, todo empezó mucho antes, allá por el año 1981.</p>
+          <p>Fue fundado por un grupo de madres y padres adscritos a la Ikastola Ikasbidea de Durana. Con más de 40 años a nuestras espaldas, el Club se ha mantenido vivo con la aportación incansable de esas familias y con la colaboración del AMPA de la Ikastola desde 2011, sumando el apoyo y patrocinio de diferentes empresas y entidades de la zona.</p>
+          <p>Actualmente, niños y niñas de diferentes centros escolares practican el ciclismo con nosotros, manteniendo intacta la ilusión del primer día. Hoy en día, algunos de aquellos niños que se acercaron al deporte a través del club, son los padres y madres de estas nuevas generaciones.</p>
         </div>
-        <div class="equipo-text">
-          <h2>Invitec Iturribero</h2>
-          <p>Cadetes, Juveniles...</p>
-          <a href="equipo-invitec.html" class="btn btn-secondary">Seguir leyendo...</a>
+        
+        <div class="historia-imagen">
+          <div class="collage-historia">
+            <img src="img/historia/foto-antigua-1.jpg" alt="Equipo Iturribero original" class="foto-principal">
+            <img src="img/historia/foto-antigua-2.jpg" alt="Jóvenes ciclistas" class="foto-secundaria">
+            <img src="img/historia/foto-antigua-3.jpg" alt="Ciclista firmando autógrafos" class="foto-secundaria">
+          </div>
         </div>
       </div>
 
-      <div class="equipo-row reverse">
-        <div class="equipo-img">
-          <img src="img/equipos/foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross">
-        </div>
-        <div class="equipo-text">
-          <h2>CX Iturribero</h2>
-          <p>Si lo pruebas, no lo olvidarás. Quizá sea por la sensación de rapidez, fluidez de carrera y esa adrenalina que te invade cuando dan la salida. 3,2,1... ¡FUEGO! El ciclocross es...</p>
-          <a href="CX-Iturribero.html" class="btn btn-secondary">Seguir leyendo...</a>
+      <div class="elite-section">
+        <h2>De la Cantera a la élite</h2>
+        <p>Son muchos los que se han iniciado bajo nuestra tutela. Antiguos miembros de nuestro Club han hecho del ciclismo su medio de vida, llegando a disputar en la élite del Ciclismo Profesional. Un orgullo que sigue inspirando a nuestra escuela.</p>
+        
+        <div class="pro-tags">
+          <span class="pro-tag">Joseba Beloki</span>
+          <span class="pro-tag">Gorka Beloki</span>
+          <span class="pro-tag">Aitor Quintana</span>
+          <span class="pro-tag">Unai Yus</span>
+          <span class="pro-tag">Iker Ballarin</span>
+          <span class="pro-tag">Unai Cuadrado</span>
+          <span class="pro-tag">Oier Lazkano</span>
+          <span class="pro-tag">Imanol Estevez</span>
         </div>
       </div>
 
@@ -71,8 +81,18 @@
     </div>
   </footer>
 
+  <!-- ESTRUCTURA DEL LIGHTBOX (OCULTA POR DEFECTO) -->
+  <div id="lightbox">
+      <span id="close-btn">&times;</span>
+      <span id="prev-btn">&#10094;</span>
+      <img id="lightbox-img" src="" alt="Ampliada">
+      <span id="next-btn">&#10095;</span>
+  </div>
+
+  <!-- SCRIPT PARA EL MENÚ MÓVIL Y EL LIGHTBOX -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // --- Menú Móvil ---
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.getElementById('menu-list');
         
@@ -81,6 +101,47 @@
                 menuList.classList.toggle('active');
             });
         }
+
+        // --- Lightbox para las imágenes de Historia ---
+        const images = Array.from(document.querySelectorAll('.collage-historia img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        let currentIndex = 0;
+
+        const showImage = (index) => {
+            lightboxImg.src = images[index].src;
+            currentIndex = index;
+        };
+
+        images.forEach((img, index) => {
+            img.style.cursor = 'pointer'; // Añade el cursor interactivo
+            img.addEventListener('click', () => {
+                showImage(index);
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage((currentIndex + 1) % images.length);
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage((currentIndex - 1 + images.length) % images.length);
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Cerrar si se hace clic en el fondo oscuro
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) lightbox.style.display = 'none';
+        });
     });
   </script>
 
