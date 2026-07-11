@@ -81,8 +81,18 @@
     </div>
   </footer>
 
+  <!-- ESTRUCTURA DEL LIGHTBOX (OCULTA POR DEFECTO) -->
+  <div id="lightbox">
+      <span id="close-btn">&times;</span>
+      <span id="prev-btn">&#10094;</span>
+      <img id="lightbox-img" src="" alt="Ampliada">
+      <span id="next-btn">&#10095;</span>
+  </div>
+
+  <!-- SCRIPT PARA EL MENÚ MÓVIL Y EL LIGHTBOX -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // --- Menú Móvil ---
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.getElementById('menu-list');
         
@@ -91,6 +101,47 @@
                 menuList.classList.toggle('active');
             });
         }
+
+        // --- Lightbox para las imágenes de Historia ---
+        const images = Array.from(document.querySelectorAll('.collage-historia img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        let currentIndex = 0;
+
+        const showImage = (index) => {
+            lightboxImg.src = images[index].src;
+            currentIndex = index;
+        };
+
+        images.forEach((img, index) => {
+            img.style.cursor = 'pointer'; // Añade el cursor interactivo
+            img.addEventListener('click', () => {
+                showImage(index);
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage((currentIndex + 1) % images.length);
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage((currentIndex - 1 + images.length) % images.length);
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Cerrar si se hace clic en el fondo oscuro
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) lightbox.style.display = 'none';
+        });
     });
   </script>
 
