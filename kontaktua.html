@@ -70,8 +70,21 @@
               <input type="text" name="asunto" placeholder="Gaia (Adibidez: Eskolan izena ematea)" required>
               <textarea name="mensaje" rows="5" placeholder="Idatzi hemen zure mezua edo kontsulta..." required></textarea>
               
+              <!-- DATUAK BABESTEKO INFORMAZIOA (LEGE BALDINTZA) -->
+              <div style="font-size: 0.8rem; color: #777; margin-bottom: 1rem; line-height: 1.4; text-align: left;">
+                <p><strong>Datuen babesari buruzko oinarrizko informazioa:</strong> Iturribero Txirrindularien Kirol Elkarteak zure datuak tratatuko ditu zure kontsultak edo izen-emate eskaerak kudeatzeko eta erantzuteko. Ez zaie daturik emango hirugarrenei, legeak hala aginduta ez bada. Zure datuak ikusteko, zuzentzeko, ezabatzeko eta gure Pribatutasun Politikan azaltzen diren gainerako eskubideak erabiltzeko aukera duzu.</p>
+              </div>
+
+              <!-- ONARPEN LAUKIA (DERRIGORREZKOA) -->
+              <div style="text-align: left; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" id="pribatutasuna" name="aceptar_privacidad" required style="margin-top: 4px; width: auto;">
+                <label for="pribatutasuna" style="font-size: 0.9rem; color: #555; line-height: 1.4;"><a href="pribatutasun-politika.html" style="color: var(--primary-color); text-decoration: underline;">Pribatutasun Politika</a> irakurri eta onartzen dut.</label>
+              </div>
+              
               <input type="hidden" name="_captcha" value="false">
-              <!-- <input type="hidden" name="_next" value="https://tu-dominio.com/eskerrik-asko.html"> -->
+              
+              <!-- Redirección automática a la misma página de kontaktua tras el envío -->
+              <input type="hidden" name="_next" value="https://www.iturribero.com/kontaktua.html">
 
               <button type="submit" class="btn btn-secondary">Mezua bidali</button>
             </form>
