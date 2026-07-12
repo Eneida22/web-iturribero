@@ -41,25 +41,12 @@
       
       <div class="equipo-row">
         <div class="equipo-img">
-          <!-- Añadido el cursor pointer -->
           <img src="img/historia/foto-antigua.jpg" alt="Equipo Invitec Iturribero Cadetes Juveniles" style="cursor: pointer;">
         </div>
         <div class="equipo-text">
           <h2>Invitec Iturribero</h2>
           <p>Cadetes Juveniles...</p>
           <a href="equipo-invitec.html" class="btn btn-secondary">Seguir leyendo...</a>
-        </div>
-      </div>
-
-      <div class="equipo-row reverse">
-        <div class="equipo-img">
-          <!-- Añadido el cursor pointer -->
-          <img src="img/equipos/foto-equipo-cx.jpg" alt="Equipo CX Iturribero Ciclocross" style="cursor: pointer;">
-        </div>
-        <div class="equipo-text">
-          <h2>CX Iturribero</h2>
-          <p>Si lo pruebas, no lo olvidarás. Quizá sea por la sensación de rapidez, fluidez de carrera y esa adrenalina que te invade cuando dan la salida. 3,2,1... ¡FUEGO! El ciclocross es...</p>
-          <a href="CX-Iturribero.html" class="btn btn-secondary">Seguir leyendo...</a>
         </div>
       </div>
 
@@ -83,7 +70,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // --- Menú Móvil ---
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.getElementById('menu-list');
         
@@ -93,7 +79,6 @@
             });
         }
 
-        // --- Lightbox para las imágenes de Equipos ---
         const images = Array.from(document.querySelectorAll('.equipo-img img'));
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
