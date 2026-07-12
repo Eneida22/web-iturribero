@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- CABECERA IDÉNTICA AL RESTO DE PÁGINAS -->
   <header class="header">
     <div class="container header-container">
       <a href="index.html" class="logo"><img src="img/logo/logo-iturribero.png" alt="Logo" class="logo-img"></a>
@@ -31,18 +30,14 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero-contacto">
       <h1>Contacta con nosotros</h1>
     </section>
 
-    <!-- SECCIÓN PRINCIPAL: MAPA Y FORMULARIO -->
     <div class="container contacto-container">
       <div class="contacto-grid">
         
-        <!-- COLUMNA IZQUIERDA: MAPA DE GOOGLE -->
         <div class="contacto-mapa">
-          <!-- El iframe carga el mapa centrado en vuestra dirección -->
           <iframe 
             src="https://maps.google.com/maps?q=Iturribero%20Kalea,%203,%2001520%20Durana,%20Araba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
@@ -53,33 +48,38 @@
           </iframe>
         </div>
 
-        <!-- COLUMNA DERECHA: INFO Y FORMULARIO -->
         <div class="contacto-info-form">
           
-          <!-- Datos Rápidos -->
           <div class="contacto-datos">
             <h3>Nuestros datos</h3>
             <p><strong>📍 Dirección:</strong> Iturribero Kalea, 3, 01520 - Durana (Araba)</p>
-            <!-- Enlace mailto añadido aquí -->
             <p><strong>✉️ E-mail:</strong> <a href="mailto:cdciturribero@gmail.com" style="color: inherit; text-decoration: underline;">cdciturribero@gmail.com</a></p>
           </div>
 
-          <!-- Formulario funcional con FormSubmit -->
           <div class="contacto-formulario">
             <h3>Envíanos un mensaje</h3>
-            <!-- ACTION apunta al servicio con tu correo -->
             <form action="https://formsubmit.co/cdciturribero@gmail.com" method="POST">
               
-              <!-- Campos del formulario -->
               <input type="text" name="nombre" placeholder="Nombre y Apellidos" required>
               <input type="email" name="email" placeholder="Correo electrónico" required>
               <input type="text" name="asunto" placeholder="Asunto (Ej: Inscripción escuela)" required>
               <textarea name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje o consulta..." required></textarea>
               
-              <!-- Configuración oculta de FormSubmit para evitar Spam -->
+              <!-- CLÁUSULA INFORMATIVA DE PRIVACIDAD -->
+              <div style="font-size: 0.8rem; color: #777; margin-bottom: 1rem; line-height: 1.4; text-align: left;">
+                <p><strong>Información básica sobre protección de datos:</strong> Club Deportivo Ciclista Iturribero tratará sus datos para gestionar y responder a sus consultas o solicitudes de inscripción. No se cederán datos a terceros salvo obligación legal. Puede ejercer sus derechos de acceso, rectificación, supresión y otros detalles descritos en nuestra Política de Privacidad.</p>
+              </div>
+
+              <!-- CASILLA DE ACEPTACIÓN OBLIGATORIA -->
+              <div style="text-align: left; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" id="privacidad" name="aceptar_privacidad" required style="margin-top: 4px; width: auto;">
+                <label for="privacidad" style="font-size: 0.9rem; color: #555; line-height: 1.4;">He leído y acepto la <a href="politica-privacidad.html" style="color: var(--primary-color); text-decoration: underline;">Política de Privacidad</a>.</label>
+              </div>
+
               <input type="hidden" name="_captcha" value="false">
-              <!-- Quita el comentario de abajo y pon tu web si quieres que tras enviar vuelva a tu página -->
-              <!-- <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html"> -->
+              
+              <!-- Redirección a la página de contacto -->
+              <input type="hidden" name="_next" value="https://www.iturribero.com/contacto.html">
 
               <button type="submit" class="btn btn-secondary">Enviar mensaje</button>
             </form>
@@ -90,7 +90,6 @@
     </div>
   </main>
 
-  <!-- PIE DE PÁGINA COMPLETO -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 Club Deportivo Ciclista Iturribero. Todos los derechos reservados.</p>
