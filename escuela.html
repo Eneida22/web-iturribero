@@ -26,10 +26,15 @@
             </button>
 
             <ul class="menu-list" id="menu-list">
+
                 <li><a href="index.html">Inicio</a></li>
+
                 <li><a href="historia.html">Historia</a></li>
+
                 <li><a href="equipos.html">Equipos</a></li>
+
                 <li><a href="escuela.html" class="active">Escuela</a></li>
+
                 <li>
                     <a href="contacto.html" class="btn-contacto-menu">
                         Contacto
@@ -59,12 +64,12 @@
       </section>
 
       <div class="escuela-galeria">
-        <img src="img/equipos/escuela/escuela-base.jpg" alt="Escuela 0">
-        <img src="img/equipos/escuela/escuela-base1.jpg" alt="Escuela 1">
-        <img src="img/equipos/escuela/escuela-base2.jpg" alt="Escuela 2">
-        <img src="img/equipos/escuela/escuela-base3.jpg" alt="Escuela 3">
-        <img src="img/equipos/escuela/escuela-base4.jpg" alt="Escuela 4">
-        <img src="img/equipos/escuela/escuela-base5.jpg" alt="Escuela 5">
+        <img src="img/equipos/escuela/escuela-base.jpg" alt="Escuela 0" style="cursor: pointer;">
+        <img src="img/equipos/escuela/escuela-base1.jpg" alt="Escuela 1" style="cursor: pointer;">
+        <img src="img/equipos/escuela/escuela-base2.jpg" alt="Escuela 2" style="cursor: pointer;">
+        <img src="img/equipos/escuela/escuela-base3.jpg" alt="Escuela 3" style="cursor: pointer;">
+        <img src="img/equipos/escuela/escuela-base4.jpg" alt="Escuela 4" style="cursor: pointer;">
+        <img src="img/equipos/escuela/escuela-base5.jpg" alt="Escuela 5" style="cursor: pointer;">
       </div>
 
       <div style="margin-top: 3rem; line-height: 1.8; color: #555;">
@@ -72,7 +77,12 @@
         <p style="margin-bottom: 1.5rem;">Desde el Club Deportivo Ciclista ITURRIBERO se entiende este deporte como un complemento a la formación como personas de todos los y las integrantes, a la vez que una posibilidad de aprendizaje y mejora de destrezas en el ámbito deportivo y personal, intentando siempre que adquieran unos valores que les servirán en su desarrollo, como el compañerismo, el esfuerzo para conseguir objetivos, disciplina, amistad, respeto a los formadores, compañeras y compañeros y patrocinadores, siempre, y todo ello en el marco de un ambicioso proyecto con perspectiva de futuro.</p>
         <p style="margin-bottom: 1.5rem;">Los integrantes de la escuela (encuadrados dentro del Deporte escolar de la Diputación Foral de Álava), los más txikis, con edades comprendidas desde los 7 hasta los 14 años, compiten fundamentalmente en la provincia, ya sea Vitoria-Gasteiz, u otras localidades como Amurrio, Agurain, Laudio, Dulantzi, etc.</p>
         <p style="margin-bottom: 1.5rem;">Además de la competición deportiva, se desarrollan actividades lúdico-deportivas con el objetivo de estrechar las relaciones entre las y los integrantes de las diferentes categorías, fuera del ámbito deportivo, y crearles el sentimiento de pertenencia al Club: excursiones, concentraciones, Día del Club, asistir a competiciones de sus ídolos, las y los ciclistas profesionales, etc.</p>
-        <div style="text-align: center; margin-top: 2rem;">
+        
+        <h3 style="color: var(--primary-color); text-align: center; margin-top: 3rem; margin-bottom: 1.5rem;">Nuestras Disciplinas: Carretera, BTT, CX y Gymkana</h3>
+        <p style="margin-bottom: 1.5rem;">Dentro de la escuela, nuestros jóvenes ciclistas tienen la oportunidad de formarse y disfrutar de <strong>4 disciplinas diferentes</strong> para adquirir un manejo completo y versátil de la bicicleta: <strong>carretera, BTT (bicicleta de montaña), CX (ciclocross) y gymkana.</strong></p>
+        <p style="margin-bottom: 1.5rem;">Especialmente en el ámbito del <strong>CX Iturribero</strong>, acercamos a la escuela la emoción del ciclocross invernal. Si lo pruebas, no lo olvidarás. Quizá sea por la sensación de rapidez, fluidez de carrera y esa adrenalina que te invade cuando dan la salida. 3,2,1... ¡FUEGO! <br><a href="CX-Iturribero.html" style="color: var(--primary-color); text-decoration: underline; font-weight: bold;">Saber más sobre el CX Iturribero...</a></p>
+
+        <div style="text-align: center; margin-top: 3rem;">
             <a href="contacto.html" class="btn btn-secondary">¡Apúntate a la escuela!</a>
         </div>
       </div>
@@ -88,7 +98,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-    
         const menuToggle = document.querySelector(".menu-toggle");
         const menuList = document.getElementById("menu-list");
     
@@ -97,7 +106,6 @@
                 menuList.classList.toggle("active");
             });
         }
-    
     });
   </script>
 
@@ -116,38 +124,40 @@
           const closeBtn = document.getElementById('close-btn');
           const nextBtn = document.getElementById('next-btn');
           const prevBtn = document.getElementById('prev-btn');
-          let currentIndex = 0;
+          
+          if(lightbox && images.length > 0) {
+              let currentIndex = 0;
 
-          const showImage = (index) => {
-              lightboxImg.src = images[index].src;
-              currentIndex = index;
-          };
+              const showImage = (index) => {
+                  lightboxImg.src = images[index].src;
+                  currentIndex = index;
+              };
 
-          images.forEach((img, index) => {
-              img.addEventListener('click', () => {
-                  showImage(index);
-                  lightbox.style.display = 'flex';
+              images.forEach((img, index) => {
+                  img.addEventListener('click', () => {
+                      showImage(index);
+                      lightbox.style.display = 'flex';
+                  });
               });
-          });
 
-          nextBtn.addEventListener('click', (e) => {
-              e.stopPropagation();
-              showImage((currentIndex + 1) % images.length);
-          });
+              nextBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  showImage((currentIndex + 1) % images.length);
+              });
 
-          prevBtn.addEventListener('click', (e) => {
-              e.stopPropagation();
-              showImage((currentIndex - 1 + images.length) % images.length);
-          });
+              prevBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  showImage((currentIndex - 1 + images.length) % images.length);
+              });
 
-          closeBtn.addEventListener('click', () => {
-              lightbox.style.display = 'none';
-          });
+              closeBtn.addEventListener('click', () => {
+                  lightbox.style.display = 'none';
+              });
 
-          // Cerrar si se hace clic en el fondo oscuro
-          lightbox.addEventListener('click', (e) => {
-              if (e.target === lightbox) lightbox.style.display = 'none';
-          });
+              lightbox.addEventListener('click', (e) => {
+                  if (e.target === lightbox) lightbox.style.display = 'none';
+              });
+          }
       });
   </script>
 </body>
