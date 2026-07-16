@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ======================================== -->
+  <!-- INICIO -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/index.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/index.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/hasiera.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/hasiera.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/index.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/hasiera.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- EQUIPOS -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/equipos.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/equipos.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/taldeak.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/taldeak.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/equipos.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/taldeak.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- EQUIPO INVITEC -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/equipo-invitec.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/equipo-invitec.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/invitec-taldea.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/invitec-taldea.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/equipo-invitec.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/invitec-taldea.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- CX ITURRIBERO -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/CX-Iturribero.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/CX-Iturribero.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/CX-Iturribero-taldea.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/CX-Iturribero-taldea.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/CX-Iturribero.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/CX-Iturribero-taldea.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- ESCUELA -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/escuela.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/escuela.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/eskola.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/eskola.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/escuela.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/eskola.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- HISTORIA -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/historia.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/historia.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/historia-eu.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/historia-eu.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/historia.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/historia-eu.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- CONTACTO -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/contacto.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/kontaktua.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/kontaktua.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/kontaktua.html" />
+  </url>
+
+  <!-- ======================================== -->
+  <!-- POLÍTICA DE PRIVACIDAD -->
+  <!-- ======================================== -->
+  <url>
+    <loc>https://www.iturribero.com/politica-privacidad.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/politica-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/pribatutasun-politika.html" />
+  </url>
+  <url>
+    <loc>https://www.iturribero.com/pribatutasun-politika.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.iturribero.com/politica-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="eu" href="https://www.iturribero.com/pribatutasun-politika.html" />
+  </url>
+
+</urlset>
