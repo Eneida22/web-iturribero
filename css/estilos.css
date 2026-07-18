@@ -324,25 +324,25 @@ body {
   margin-bottom: 3rem;
 }
 
-/* Columna de Contacto (Izquierda) */
+/* Columna de Contacto Izquierda */
 .footer-col:nth-child(1) {
   text-align: left;
 }
 
-/* Columna de Enlaces (Centro - Centrada como en Inurri) */
+/* Columna de Enlaces Centro */
 .footer-col:nth-child(2) {
   text-align: center;
 }
 
-/* Columna de Redes (Derecha) */
+/* Columna de Redes Derecha */
 .footer-col:nth-child(3) {
   text-align: left;
 }
 
 .footer-col h3 {
-  font-size: 1.8rem; /* Títulos más grandes */
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #ffffff; /* Títulos en blanco en lugar de naranja */
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -351,14 +351,14 @@ body {
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 1.2rem;
-  color: #ffffff; /* Texto más blanco y legible */
+  color: #ffffff;
   font-size: 1.1rem;
 }
 
 .footer-icon {
   width: 20px;
   height: 20px;
-  fill: #ffffff; /* Iconos de contacto en blanco puro */
+  fill: var(--primary-color);
   flex-shrink: 0;
   margin-top: 4px;
 }
@@ -373,7 +373,7 @@ body {
 }
 
 .footer-links a {
-  color: #ffffff; /* Enlaces blancos */
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
@@ -383,7 +383,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Redes Sociales - Sin fondo y más grandes */
 .social-icons {
   display: flex;
   gap: 20px;
@@ -398,12 +397,12 @@ body {
 }
 
 .social-icons a:hover {
-  color: var(--primary-color); /* El icono se iluminará en naranja al pasar el ratón */
+  color: var(--primary-color);
   transform: translateY(-3px);
 }
 
 .social-icons svg {
-  width: 30px; /* Iconos de redes aumentados */
+  width: 30px;
   height: 30px;
   fill: currentColor;
 }
@@ -429,7 +428,7 @@ body {
 }
 
 /* =========================================================
-   DISEÑO RESPONSIVO DEL FOOTER (MÓVILES)
+   DISENO RESPONSIVO DEL FOOTER MOVILES
    ========================================================= */
 @media (max-width: 768px) {
   .footer-grid {
