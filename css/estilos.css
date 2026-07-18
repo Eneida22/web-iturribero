@@ -270,11 +270,11 @@ body {
 
 .sponsors-track {
   display: flex;
-  flex-wrap: nowrap; /* Esto es la clave para que no salten de línea */
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 50px;
+  gap: 100px; /* AQUÍ: Aumentamos la separación a 100px */
   width: max-content;
-  animation: scroll_infinito 60s linear infinite;
+  animation: scroll_infinito 60s linear infinite; /* Mantienes tus 60s */
 }
 
 .sponsors-track:hover {
@@ -302,7 +302,8 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 25px));
+    /* AQUÍ: Como el gap ahora es 100px, tenemos que restar la mitad exacta, que son 50px */
+    transform: translateX(calc(-50% - 50px));
   }
 }
 
