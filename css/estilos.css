@@ -321,7 +321,7 @@ body {
 .footer-grid {
   display: flex;
   justify-content: center; /* Centra horizontalmente todo el bloque */
-  gap: 40px;              /* Espacio fijo entre columnas para que no se separen */
+  gap: 60px;              /* Espacio fijo entre columnas para que no se separen */
   max-width: 1200px;
   margin: 0 auto 3rem auto;
   padding: 0 20px;
