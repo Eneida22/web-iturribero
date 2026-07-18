@@ -845,6 +845,18 @@ body {
     gap: 3rem;
 }
 
+/* Estilo específico para el email en contacto */
+.contacto-datos a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit;        /* Mantiene el color del texto original */
+    transition: color 0.3s ease;
+    cursor: pointer;       /* Asegura la manita */
+}
+
+.contacto-datos a:hover {
+    color: var(--primary-color); /* Cambia a naranja al pasar el ratón */
+}
+
 .contacto-datos h3, .contacto-formulario h3 {
     color: var(--primary-color);
     font-size: 2rem;
