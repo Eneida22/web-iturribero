@@ -403,10 +403,28 @@ body {
     color:var(--primary-color);
 }
 
+.footer-links {
+    text-align: center;
+}
+
 .footer-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.9rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
 }
 
 /* Responsive */
