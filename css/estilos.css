@@ -307,6 +307,17 @@ body {
 }
 
 /* =========================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================= */
+.footer {
+  background-color: var(--footer-bg);
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 2.5rem;
+}
+
+/* =========================================================
    ESTILOS ESPECÍFICOS: PÁGINA DE HISTORIA
    ========================================================= */
 .hero-historia {
