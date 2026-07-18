@@ -255,58 +255,57 @@ body {
 }
   
 /* =========================================================
-   CARRUSEL DE PATROCINADORES
+   CARRUSEL DE PATROCINADORES (INFINITO)
    ========================================================= */
-.sponsors-section {
-    background-color: var(--bg-color);
-    padding: 4rem 0;
-    border-top: 1px solid rgba(0,0,0,0.05);
+.carrusel-patrocinadores {
+  width: 100%;
+  overflow: hidden;
+  padding: 4rem 0; /* Margen de seguridad arriba y abajo para que el logo crezca sin cortarse */
+  background-color: var(--bg-color);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  /* Mantiene tu efecto difuminado a los lados de la pantalla */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.sponsors-slider {
-    overflow: hidden;
-    position: relative;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+.carrusel-track {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: max-content;
+  animation: scroll-infinito 35s linear infinite; /* Velocidad del movimiento */
 }
 
-.sponsors-track {
-    display: flex;
-    width: max-content;
-}
-
-.sponsors-group {
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-    padding-right: 5rem;
-    flex-shrink: 0;
+/* Pausa el movimiento si el usuario pone el ratón encima */
+.carrusel-track:hover {
+  animation-play-state: paused;
 }
 
 .sponsor-logo {
-    height: 70px;
-    width: auto;
-    max-width: 220px;
-    object-fit: contain;
-    filter: grayscale(100%) opacity(60%);
-    transition: transform 0.3s ease, filter 0.3s ease;
-    flex-shrink: 0;
+  height: 90px; /* Tamaño base más grande */
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(60%); /* Mantiene tu efecto gris original */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .sponsor-logo:hover {
-    filter: grayscale(0%) opacity(100%);
-    transform: scale(1.08);
+  filter: grayscale(0%) opacity(100%); /* Vuelve al color original */
+  transform: scale(1.25); /* Crece un 25% */
 }
 
-/* =========================================================
-   PIE DE PÁGINA (FOOTER)
-   ========================================================= */
-.footer {
-  background-color: var(--footer-bg);
-  color: #ffffff;
-  text-align: center;
-  padding: 3rem 0;
-  margin-top: 2.5rem;
+@keyframes scroll-infinito {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Desplaza exactamente la primera mitad de los logos repetidos */
+    transform: translateX(calc(-50% - 25px));
+  }
 }
 
 /* =========================================================
