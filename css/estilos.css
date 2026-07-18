@@ -317,8 +317,11 @@ body {
     margin-top:0;
 }
 
-.footer-top{
-    padding:70px 0 60px;
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    align-items: start;
 }
 
 .footer-grid{
@@ -398,6 +401,12 @@ body {
 
 .footer-bottom a:hover{
     color:var(--primary-color);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Responsive */
