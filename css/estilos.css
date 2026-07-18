@@ -274,7 +274,7 @@ body {
   align-items: center;
   gap: 50px;
   width: max-content;
-  animation: scroll_infinito 35s linear infinite;
+  animation: scroll_infinito 60s linear infinite;
 }
 
 .sponsors-track:hover {
