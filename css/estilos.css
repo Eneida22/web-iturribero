@@ -323,11 +323,10 @@ body {
 
 .footer-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:70px;
-    max-width:1000px;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:120px;
+    max-width:1200px;
     margin:0 auto;
-    align-items:start;
 }
 
 .footer-column h3{
