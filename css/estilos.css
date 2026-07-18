@@ -838,4 +838,28 @@ body {
   .hero-roster h1 { font-size: 2.5rem; }
   .roster-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
   .rider-img { height: 280px; }
+
+  /* Ajuste vital del carrusel para móviles (evita el colapso de memoria) */
+  .sponsors-track {
+    gap: 40px; /* Reducimos la separación en móviles */
+    -webkit-animation: scroll_movil 40s linear infinite;
+    animation: scroll_movil 40s linear infinite;
+  }
+  
+  .sponsor-logo {
+    height: 55px; /* Logos un poco más contenidos para la pantalla del móvil */
+  }
+}
+
+/* =========================================================
+   ANIMACIÓN ESPECÍFICA PARA MÓVILES (Con prefijos de seguridad)
+   ========================================================= */
+@-webkit-keyframes scroll_movil {
+  0% { -webkit-transform: translateX(0); }
+  100% { -webkit-transform: translateX(calc(-50% - 20px)); } /* 20px es la mitad del nuevo gap de 40px */
+}
+
+@keyframes scroll_movil {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 20px)); }
 }
